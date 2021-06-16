@@ -47,14 +47,9 @@
 
     @yield('content')
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    <form id="logout-form" action="/logout" method="POST" style="display: none;">
         {{ csrf_field() }}
     </form>
-    <footer class="footer">
-        <div class="container">
-            <p>© {{ config('app.name') }}</p>
-        </div>
-    </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

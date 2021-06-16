@@ -107,7 +107,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-static-top\">\n\t<div class=\"container\">\n\t\t<div class=\"navbar-header\">\n\n\t\t\t<!-- Collapsed Hamburger -->\n\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#app-navbar-collapse\" aria-expanded=\"false\">\n\t\t\t\t<span class=\"sr-only\">Toggle Navigation</span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t</button>\n\n\t\t\t<!-- Branding Image -->\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\" style=\"padding: 0px 15px;\">\n\t\t\t\t<img src=\"img/logo.png\" alt=\"Logo\" style=\"width: 75px;\">\n\t\t\t</a>\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\">\n\t\t\t\t{{ appName }}\n\t\t\t</a>\n\t\t</div>\n\n\t\t<div class=\"collapse navbar-collapse\" id=\"app-navbar-collapse\">\n\t\t\t<!-- Left Side Of Navbar -->\n\t\t\t<ul class=\"nav navbar-nav\">\n\t\t\t\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\t\t\t\tLinks\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t</ng-container>\n\t\t\t\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</ng-container>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\t\t\t\tAdministração \n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t<a routerLink=\"/users\">\n\t\t\t\t\t\t\t\t\tUsuários\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t&nbsp;\n\t\t\t</ul>\n\n\t\t\t<!-- Right Side Of Navbar -->\n\t\t\t<ul class=\"nav navbar-nav navbar-right\">\n\t\t\t\t<!-- Authentication Links -->\n\t\t\t\t<ng-container *ngIf=\"!isLogado\">\n\t\t\t\t\t<li><a href=\"/login\">Login</a></li>\n\t\t\t\t\t<li><a href=\"/register\">Cadastrar</a></li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"isLogado\">\n\t\t\t\t\t<li *ngIf=\"usuarioHackAdmin\"><a href=\"#\" style=\"background-color: red; color: white;\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\t\t\tAdministrador Logado como: </a></li>\n\t\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t\t\t<a href=\"#\" [ngClass]=\"{vermelho: usuarioHackAdmin}\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\t\t\t\t{{ username }} \n\t\t\t\t\t\t</a>\n\n\t\t\t\t\t\t<ul class=\"dropdown-menu\">\n                            <li>\n                                <a routerLink=\"/painel\">\n                                    Painel do Usuário\n                                </a>\n                            </li>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t<a href=\"/logout\"\n\t\t\t\t\t\t\t\t\tonclick=\"event.preventDefault();\n\t\t\t\t\t\t\t\t\t\t\t\tdocument.getElementById('logout-form').submit();\">\n\t\t\t\t\t\t\t\t\tLogout\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</div>\n\t</div>\n</nav>\n\n\n<div id=\"app\">\n    \n<div class=\"container\">\n    <router-outlet></router-outlet>\n</div>\n\t\n</div>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-static-top\">\n\t<div class=\"container\">\n\t\t<div class=\"navbar-header\">\n\n\t\t\t<!-- Collapsed Hamburger -->\n\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#app-navbar-collapse\" aria-expanded=\"false\">\n\t\t\t\t<span class=\"sr-only\">Toggle Navigation</span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t</button>\n\n\t\t\t<!-- Branding Image -->\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\" style=\"padding: 0px 15px;\">\n\t\t\t\t<img src=\"img/logo.png\" alt=\"Logo\" style=\"width: 75px;\">\n\t\t\t</a>\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\">\n\t\t\t\t{{ appName }}\n\t\t\t</a>\n\t\t</div>\n\n\t\t<div class=\"collapse navbar-collapse\" id=\"app-navbar-collapse\">\n\t\t\t<!-- Left Side Of Navbar -->\n\t\t\t\n\t\t\t<app-menu>Carregando Menus...</app-menu>\n\n\t\t\t<!-- Right Side Of Navbar -->\n\t\t\t\n\t\t</div>\n\t</div>\n</nav>\n\n\n<div id=\"app\" style=\"background-color: #020100; background-position-x: center; background-repeat-y: no-repeat; background-image: url(/img/fundo2.jpg);\">\n    \n\t<div class=\"container\">\n\t\t<router-outlet></router-outlet>\n\t\t<footer class=\"footer\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<p>© {{ appName }}</p>\n\t\t\t</div>\n\t\t</footer>\n\t</div>\n\t\n\n</div>\n"
 
 /***/ }),
 
@@ -138,7 +138,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'tech-front';
+        this.title = 'ants-wiki';
     }
     AppComponent.prototype.ngOnInit = function () {
         var divHiddens = document.getElementById('hiddens');
@@ -197,6 +197,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _painel_painel_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./painel/painel.component */ "./src/app/painel/painel.component.ts");
 /* harmony import */ var _zeros_pipe__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./zeros.pipe */ "./src/app/zeros.pipe.ts");
 /* harmony import */ var _menu_menu_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./menu/menu.component */ "./src/app/menu/menu.component.ts");
+/* harmony import */ var _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./colony-actions/colony-actions.component */ "./src/app/colony-actions/colony-actions.component.ts");
+/* harmony import */ var _colony_actions_colony_actions_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./colony-actions/colony-actions.service */ "./src/app/colony-actions/colony-actions.service.ts");
+
+
 
 
 
@@ -218,6 +222,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var appRoutes = [
     { path: 'painel', component: _painel_painel_component__WEBPACK_IMPORTED_MODULE_16__["PainelComponent"] },
+    { path: 'colony-actions', component: _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__["ColonyActionsComponent"] },
     { path: 'users', component: _users_users_component__WEBPACK_IMPORTED_MODULE_9__["UsersComponent"] },
     /*{ path: '',
       redirectTo: '/',
@@ -240,6 +245,7 @@ var AppModule = /** @class */ (function () {
                 _painel_painel_component__WEBPACK_IMPORTED_MODULE_16__["PainelComponent"],
                 _zeros_pipe__WEBPACK_IMPORTED_MODULE_17__["ZerosPipe"],
                 _menu_menu_component__WEBPACK_IMPORTED_MODULE_18__["MenuComponent"],
+                _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__["ColonyActionsComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -253,6 +259,7 @@ var AppModule = /** @class */ (function () {
             ],
             providers: [
                 _dados_service__WEBPACK_IMPORTED_MODULE_15__["DadosService"],
+                _colony_actions_colony_actions_service__WEBPACK_IMPORTED_MODULE_20__["ColonyActionsService"],
                 _users_users_service__WEBPACK_IMPORTED_MODULE_11__["UsersService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
@@ -312,7 +319,321 @@ var ArrayIndexador = /** @class */ (function () {
             this.indices[this.listaOrigin[i][this.chave]] = i;
         }
     };
+    ArrayIndexador.prototype.getListaOrigin = function () {
+        return this.listaOrigin;
+    };
     return ArrayIndexador;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/colony-actions/colony-action.ts":
+/*!*************************************************!*\
+  !*** ./src/app/colony-actions/colony-action.ts ***!
+  \*************************************************/
+/*! exports provided: ColonyAction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColonyAction", function() { return ColonyAction; });
+var ColonyAction = /** @class */ (function () {
+    function ColonyAction(id, descricao, dia_semana_id, sequencial) {
+        if (typeof id == "number") {
+            this.id = id;
+            this.descricao = descricao;
+            this.dia_semana_id = dia_semana_id;
+            this.sequencial = sequencial;
+        }
+        else {
+            this.id = parseInt(id['id']);
+            this.descricao = id['descricao'];
+            this.dia_semana_id = id['dia_semana_id'];
+            this.sequencial = id['sequencial'];
+        }
+    }
+    ColonyAction.generate = function () {
+        return new ColonyAction(0, "", 0, 0);
+    };
+    ColonyAction.prototype.clone = function () {
+        return new ColonyAction(this.id, this.descricao, this.dia_semana_id, this.sequencial);
+    };
+    return ColonyAction;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/colony-actions/colony-actions.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/colony-actions/colony-actions.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-default\">\n\t<div class=\"panel-heading\">Colony Action Event Schedule</div>\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label>Day of Week:</label><br>\n\t\t\t<select class=\"form-control\" name=\"dia-selecionado\" [(ngModel)]=\"diaSelecionadoId\" (change)=\"selecionaDia()\" style=\"max-width: 410px;\" [disabled]=\"!editavel\">   \n\t\t\t\t<option hidden disabled [value]=\"0\" selected> -- Select -- </option>  \n\t\t\t\t<option *ngFor=\"let d of dias\" [value]=\"d.id\">Day {{d.id}}: {{d.day}} - Warzone Event: {{d.event}}</option>       \n\t\t\t</select><br>\n\t\t\t<label>Timezone:</label><br>\n\t\t\t<select class=\"form-control\" name=\"timezone\" [(ngModel)]=\"timezoneOffset\" (change)=\"selecionaTimezone()\" style=\"max-width: 410px;\" [disabled]=\"!editavel\">   \n\t\t\t\t<option hidden disabled [value]=\"0\" selected> -- Select -- </option>  \n\t\t\t\t<option [value]=\"LOCAL_TIMEZONE_OFFSET\">{{LOCAL_TIMEZONE_STRING}}</option>\n\t\t\t\t<option [value]=\"0\">UTC (Universal / Greenwich)</option>      \n\t\t\t</select><br>\n\t\t\t<ng-container *ngIf=\"diaSelecionado.colonyActionsIndex\">\n\t\t\t\t<div>\n\t\t\t\t\t<table class=\"table\"style=\"margin-bottom: 0px\">\n\t\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t\t<col width=\"120px\"/>\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t\t<col width=\"15px\"/>\n\t\t\t\t\t\t</colgroup>\n\t\t\t\t\t\t<thead class=\"thead-light\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<th style=\"text-align: center\">SCHEDULE</th>\n\t\t\t\t\t\t\t\t<th class=\"celula-trunca-texto\" title=\"EVENT\">EVENT</th>\n\t\t\t\t\t\t\t\t<th></th>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t</table>\n\t\t\t\t</div>\n\t\t\t\t<div>\n\t\t\t\t\t<table class=\"table\" data-toggle=\"table\" >\n\t\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t\t<col width=\"120px\"/>\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t</colgroup>\n\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t<!--tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" class=\"clickable-row\" (click)=\"selecionarEvento(evento)\" [ngClass]=\"{'linha-selecionada': evento.id == eventoSelecionado.id}\"-->\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td class=\"celula-trunca-texto\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial + 8)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial + 8)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td class=\"celula-trunca-texto\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial + 16)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial + 16)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td class=\"celula-trunca-texto\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t<!--tfoot class=\"status-tabela\">\n\t\t\t\t\t\t\t<tr *ngIf=\"status == LOADING\"><td colspan=\"6\"><i>Carregando Macros...</i></td></tr>\n\t\t\t\t\t\t\t<tr *ngIf=\"macros != null && macros.length == 0 && status == COMPLETE\"><td colspan=\"6\"><i>Não Há Macros para serem listadas</i></td></tr>\n\t\t\t\t\t\t\t<tr *ngIf=\"status == ERROR\"><td class=\"erro\" colspan=\"6\"><i>Falha na obtenção das Macros!</i></td></tr>\n\t\t\t\t\t\t</tfoot-->\n\t\t\t\t\t</table>\n\t\t\t\t</div>\n\t\t\t</ng-container>\n\t\t\t\n\t\t</div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/colony-actions/colony-actions.component.less":
+/*!**************************************************************!*\
+  !*** ./src/app/colony-actions/colony-actions.component.less ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbG9ueS1hY3Rpb25zL2NvbG9ueS1hY3Rpb25zLmNvbXBvbmVudC5sZXNzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/colony-actions/colony-actions.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/colony-actions/colony-actions.component.ts ***!
+  \************************************************************/
+/*! exports provided: ColonyActionsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColonyActionsComponent", function() { return ColonyActionsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _abstract_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../abstract-component */ "./src/app/abstract-component.ts");
+/* harmony import */ var _colony_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colony-action */ "./src/app/colony-actions/colony-action.ts");
+/* harmony import */ var _colony_actions_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colony-actions.service */ "./src/app/colony-actions/colony-actions.service.ts");
+/* harmony import */ var _dia_semana__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dia-semana */ "./src/app/colony-actions/dia-semana.ts");
+
+
+
+
+
+
+var ColonyActionsComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](ColonyActionsComponent, _super);
+    function ColonyActionsComponent(colonyActionsService) {
+        var _this = _super.call(this) || this;
+        _this.colonyActionsService = colonyActionsService;
+        _this.TIME_NOW = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 0);
+        _this.TIMESTAMP_PLUS = 60 * 60 * 1000;
+        _this.TIME_05 = 5 * 60 * 1000;
+        _this.TIME_59 = 59 * 60 * 1000 + 59 * 1000;
+        _this.LOCAL_TIMEZONE_STRING = new Date().toTimeString().substr(new Date().toTimeString().search('GMT'));
+        _this.LOCAL_TIMEZONE_OFFSET = -new Date().getTimezoneOffset() * 60 * 1000;
+        _this.diaSelecionadoId = "";
+        _this.timezoneOffset = "";
+        _this.eventoSelecionadoId = "";
+        _this.diaSelecionado = _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"].generate();
+        _this.eventoSelecionado = _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"].generate();
+        _this.timezoneSelecionado = 0;
+        return _this;
+    }
+    Object.defineProperty(ColonyActionsComponent.prototype, "dias", {
+        get: function () {
+            return this.colonyActionsService.dias;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ColonyActionsComponent.prototype.selecionaDia = function () {
+        this.diaSelecionado = this.colonyActionsService.diasIndex.get(this.diaSelecionadoId);
+    };
+    ColonyActionsComponent.prototype.selecionarEvento = function (evento) {
+        this.eventoSelecionado = evento.clone();
+    };
+    ColonyActionsComponent.prototype.selecionaTimezone = function () {
+        this.timezoneSelecionado = this.timezoneOffset ? parseInt(this.timezoneOffset) : 0;
+    };
+    ColonyActionsComponent.prototype.getDateLine = function (sequencial) {
+        var start = new Date(this.TIME_NOW.getTime() + this.timezoneSelecionado + (sequencial * this.TIMESTAMP_PLUS) + this.TIME_05).toTimeString().slice(0, 5);
+        var end = new Date(this.TIME_NOW.getTime() + this.timezoneSelecionado + (sequencial * this.TIMESTAMP_PLUS) + this.TIME_59).toTimeString().slice(0, 5);
+        return start + " ~ " + end;
+    };
+    ColonyActionsComponent.prototype.isInnerEvent = function (sequencial) {
+        if (this.diaSelecionadoId != new Date(new Date().getTime() - this.LOCAL_TIMEZONE_OFFSET).getDay())
+            return false;
+        var start = new Date(this.TIME_NOW.getTime() + this.LOCAL_TIMEZONE_OFFSET + (sequencial * this.TIMESTAMP_PLUS));
+        var end = new Date(this.TIME_NOW.getTime() + this.LOCAL_TIMEZONE_OFFSET + (sequencial * this.TIMESTAMP_PLUS) + this.TIME_59);
+        return new Date().getTime() >= start.getTime() && new Date().getTime() <= end.getTime();
+    };
+    ColonyActionsComponent.prototype.ngOnInit = function () {
+        this.timezoneOffset = this.LOCAL_TIMEZONE_OFFSET;
+        this.selecionaTimezone();
+        this.editavel = true;
+        this.diaSelecionadoId = new Date(new Date().getTime() - this.LOCAL_TIMEZONE_OFFSET).getDay();
+        this.selecionaDia();
+    };
+    ColonyActionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-colony-actions',
+            template: __webpack_require__(/*! ./colony-actions.component.html */ "./src/app/colony-actions/colony-actions.component.html"),
+            styles: [__webpack_require__(/*! ./colony-actions.component.less */ "./src/app/colony-actions/colony-actions.component.less")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_colony_actions_service__WEBPACK_IMPORTED_MODULE_4__["ColonyActionsService"]])
+    ], ColonyActionsComponent);
+    return ColonyActionsComponent;
+}(_abstract_component__WEBPACK_IMPORTED_MODULE_2__["AbstractComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/colony-actions/colony-actions.service.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/colony-actions/colony-actions.service.ts ***!
+  \**********************************************************/
+/*! exports provided: ColonyActionsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColonyActionsService", function() { return ColonyActionsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _array_indexador__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../array-indexador */ "./src/app/array-indexador.ts");
+/* harmony import */ var _colony_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colony-action */ "./src/app/colony-actions/colony-action.ts");
+/* harmony import */ var _dia_semana__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dia-semana */ "./src/app/colony-actions/dia-semana.ts");
+
+
+
+
+
+var ColonyActionsService = /** @class */ (function () {
+    function ColonyActionsService() {
+        this.dias = [
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](1, "Monday", "Gather Resource"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](2, "Tuesday", "Upgrade Building"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](3, "Wednesday", "Research Evolution"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](4, "Thursday", "Strengthen Special Ant"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](5, "Friday", "Hatch Soldier"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](6, "Saturday", "Free Development"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](7, "Sunday", "Warzone Expedition")
+        ];
+        this.colonyActions = [
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](1, "Building + Building Speedup", 1, 0),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](2, "Building", 1, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](3, "Hatching Speedup", 1, 2),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](4, "Building + Hatching Troops", 1, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](5, "Building Speedup + Evolution Speedup + Hatching Speedup", 1, 4),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](6, "Building + Evolution + Hatching Speedup", 1, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](7, "Building + Evolution + Hatching Troops", 1, 6),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](8, "Building", 1, 7),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](9, "Building", 2, 0),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](10, "Evolution + Evolution Speedups", 2, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](11, "Building", 2, 2),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](12, "Use Any Speedup", 2, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](13, "Building + Evolution", 2, 4),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](14, "Building + Building Speedup", 2, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](15, "Building + Evolution + Hatching Troops", 2, 6),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](16, "Building + Evolution + Hatching Troops", 2, 7),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](17, "Building + Building Speedup", 3, 0),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](18, "Evolution + Evolution Speedup", 3, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](19, "Hatching Speedup", 3, 2),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](20, "Building + Evolution", 3, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](21, "Building + Hatching Troops", 3, 4),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](22, "Building Speedup + Evolution Speedup + Hatching Speedup", 3, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](23, "Building + Evolution + Hatching Speedup", 3, 6),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](24, "Building Speedup + Evolution Speedup + Hatching Speedup", 3, 7),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](25, "Building + Building Speedup", 4, 0),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](26, "All Special Ant Development", 4, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](27, "Building Speedup + Evolution Speedup + Hatching Speedup", 4, 2),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](28, "All Special Ant Development", 4, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](29, "Use Any Speedup", 4, 4),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](30, "All Special Ant Development", 4, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](31, "Building + Evolution + Hatching Speedup", 4, 6),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](32, "All Special Ant Development", 4, 7),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](33, "Use Any Speedup", 5, 0),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](34, "Building Speedup + Evolution Speedup + Hatching Speedup", 5, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](35, "Building + Evolution + Hatching Speedup", 5, 2),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](36, "Hatching Speedup", 5, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](37, "Building + Evolution + Hatching Speedup", 5, 4),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](38, "Building + Hatching Troops", 5, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](39, "Evolution + Hatching Troops", 5, 6),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](40, "Use Any Speedup", 5, 7),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](41, "Use Any Speedup", 6, 0),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](42, "Evolution + Evolution Speedup", 6, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](43, "Building + Building Speedup", 6, 2),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](44, "Use Hatching Speedup", 6, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](45, "Building + Evolution + Hatching Speedup", 6, 4),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](46, "Building + Evolution + Hatching Speedup", 6, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](47, "Building + Hatching Troops", 6, 6),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](48, "Evolution + Hatching Troops", 6, 7),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](49, "Use Any Speedup", 7, 0),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](50, "Evolution + Evolution Speedup", 7, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](51, "Building + Building Speedup", 7, 2),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](52, "Use Hatching Speedup", 7, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](53, "Building + Evolution + Hatching Speedup", 7, 4),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](54, "Building + Evolution + Hatching Speedup", 7, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](55, "Building + Hatching Troops", 7, 6),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](56, "Evolution + Hatching Troops", 7, 7),
+        ];
+        this.diasIndex = null;
+        this.obtemDias();
+    }
+    ColonyActionsService.prototype.obtemDias = function () {
+        this.diasIndex = new _array_indexador__WEBPACK_IMPORTED_MODULE_2__["ArrayIndexador"](this.dias);
+        for (var i = 0; i < this.colonyActions.length; i++) {
+            var ca = this.colonyActions[i];
+            var di = this.diasIndex.get(ca.dia_semana_id);
+            if (di) {
+                if (di.colonyActionsIndex) {
+                    di.colonyActionsIndex.add(ca);
+                }
+                else {
+                    di.colonyActionsIndex = new _array_indexador__WEBPACK_IMPORTED_MODULE_2__["ArrayIndexador"]([ca], 'sequencial');
+                }
+            }
+        }
+    };
+    ColonyActionsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ColonyActionsService);
+    return ColonyActionsService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/colony-actions/dia-semana.ts":
+/*!**********************************************!*\
+  !*** ./src/app/colony-actions/dia-semana.ts ***!
+  \**********************************************/
+/*! exports provided: DiaSemana */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DiaSemana", function() { return DiaSemana; });
+/* harmony import */ var _array_indexador__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../array-indexador */ "./src/app/array-indexador.ts");
+
+var DiaSemana = /** @class */ (function () {
+    function DiaSemana(id, day, event) {
+        this.colonyActionsIndex = null;
+        if (typeof id == "number") {
+            this.id = id;
+            this.day = day;
+            this.event = event;
+        }
+        else {
+            this.id = parseInt(id['id']);
+            this.day = id['day'];
+            this.event = id['event'];
+        }
+    }
+    DiaSemana.prototype.setColonyActions = function (colonyActions) {
+        this.colonyActionsIndex = new _array_indexador__WEBPACK_IMPORTED_MODULE_0__["ArrayIndexador"](colonyActions, 'sequencial');
+    };
+    DiaSemana.generate = function () {
+        return new DiaSemana(0, "", "");
+    };
+    DiaSemana.prototype.clone = function () {
+        return new DiaSemana(this.id, this.day, this.event);
+    };
+    return DiaSemana;
 }());
 
 
@@ -445,7 +766,7 @@ var FormatadorDataPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  home works!\n</p>\n"
+module.exports = "\n<div class=\"panel panel-default\">\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div class=\"home\" style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label style=\"font-size: larger;\">Welcome to TutoAnts site! We're an tool for helping on play the game \"The Ants: Underground Kingdom\". \n\t\t\t\tCheck out the links below to get started</label> \n\t\t\t<a routerLink=\"/colony-actions\" class=\"button\">\n\t\t\t\t<h2 class=\"icon-battle\">Colony Action Event Schedule</h2>\n\t\t\t\t<p>See all Colony Action Events of Week </p>\n\t\t\t</a>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -501,7 +822,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-static-top\">\n\t<div class=\"container\">\n\t\t<div class=\"navbar-header\">\n\n\t\t\t<!-- Collapsed Hamburger -->\n\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#app-navbar-collapse\" aria-expanded=\"false\">\n\t\t\t\t<span class=\"sr-only\">Toggle Navigation</span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t</button>\n\n\t\t\t<!-- Branding Image -->\n\t\t\t<a class=\"navbar-brand\" href=\"/\" style=\"padding: 0px 15px;\">\n\t\t\t\t<img src=\"img/logo.png\" alt=\"Logo\" style=\"width: 75px;\">\n\t\t\t</a>\n\t\t\t<a class=\"navbar-brand\" href=\"/\">\n\t\t\t\t{{ appName }}\n\t\t\t</a>\n\t\t</div>\n\n\t\t<div class=\"collapse navbar-collapse\" id=\"app-navbar-collapse\">\n\t\t\t<!-- Left Side Of Navbar -->\n\t\t\t<ul class=\"nav navbar-nav\">\n\t\t\t\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\t\t\t\tLinks\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t<a href=\"/\">\n\t\t\t\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t</ng-container>\n\t\t\t\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t<a href=\"/\">\n\t\t\t\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</ng-container>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\t\t\t\tAdministração \n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t<a href=\"/users\">\n\t\t\t\t\t\t\t\t\tUsuários\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t&nbsp;\n\t\t\t</ul>\n\n\t\t\t<!-- Right Side Of Navbar -->\n\t\t\t<ul class=\"nav navbar-nav navbar-right\">\n\t\t\t\t<!-- Authentication Links -->\n\t\t\t\t<ng-container *ngIf=\"!isLogado\">\n\t\t\t\t\t<li><a href=\"/login\">Login</a></li>\n\t\t\t\t\t<li><a href=\"/register\">Cadastrar</a></li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"isLogado\">\n\t\t\t\t\t<li *ngIf=\"usuarioHackAdmin\"><a href=\"#\" style=\"background-color: red; color: white;\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\t\t\tAdministrador Logado como: </a></li>\n\t\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t\t\t<a href=\"#\" [ngClass]=\"{vermelho: usuarioHackAdmin}\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\t\t\t\t{{ username }} \n\t\t\t\t\t\t</a>\n\n\t\t\t\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t<a href=\"/logout\"\n\t\t\t\t\t\t\t\t\tonclick=\"event.preventDefault();\n\t\t\t\t\t\t\t\t\t\t\t\tdocument.getElementById('logout-form').submit();\">\n\t\t\t\t\t\t\t\t\tLogout\n\t\t\t\t\t\t\t\t</a>\n\n\t\t\t\t\t\t\t\t<form id=\"logout-form\" action=\"/logout\" method=\"POST\" style=\"display: none;\">\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</div>\n\t</div>\n</nav>\n\n\n<div id=\"app\">\n\n\t\n\n</div>"
+module.exports = "<ul class=\"nav navbar-nav\">\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tHome\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/colony-actions\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tColony Actions Table\n\t\t</a>\n\t</li>\n\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tLinks\n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tAdministração \n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<li>\n\t\t\t\t\t<a routerLink=\"/users\">\n\t\t\t\t\t\tUsuários\n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t&nbsp;\n</ul>"
 
 /***/ }),
 
@@ -1250,7 +1571,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\tech-front\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\wamp64\www\ants-wiki-front\src\main.ts */"./src/main.ts");
 
 
 /***/ })

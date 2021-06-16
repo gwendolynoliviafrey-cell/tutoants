@@ -69,13 +69,13 @@ html, body {
 }
 
 .navbar-default {
-    background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#19882c), color-stop(100%, #025310));
-    background-image: -webkit-radial-gradient(center, ellipse cover, #19882c 1%, #025310 100%);
-    background-image: -o-radial-gradient(center, ellipse cover, #19882c 1%, #025310 100%);
-    background-image: -ms-radial-gradient(center, ellipse cover, #19882c 1%, #025310 100%);
+    background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#863506), color-stop(100%, #2f2102));
+    background-image: -webkit-radial-gradient(center, ellipse cover, #863506 1%, #2f2102 100%);
+    background-image: -o-radial-gradient(center, ellipse cover, #863506 1%, #2f2102 100%);
+    background-image: -ms-radial-gradient(center, ellipse cover, #863506 1%, #2f2102 100%);
 
     /*Prod*/
-    background-image: radial-gradient(ellipse at center, #19882c 1%, #025310 100%);
+    background-image: radial-gradient(ellipse at center, #863506 1%, #2f2102 100%);
     /*Dev
     background-image: radial-gradient(ellipse at center, #ff0500 1%, #691715 100%);*/
 
@@ -92,7 +92,7 @@ html, body {
     background-color: #ffffff;
 }
 #app{
-    height: calc(100% - 103px);
+    height: calc(100% - 70px);
     overflow: auto;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -118,7 +118,7 @@ table.table>caption>table>tbody>tr>td {
     vertical-align: middle;
 }
 .footer {
-    background-color: #00420c;
+    background-color: #271503;
 }
 .footer p {
     color: white;
@@ -139,7 +139,7 @@ table.table>tbody>tr>td, table.table>tbody>tr>th {
 }
 .panel-default > .panel-heading, .card > .card-header {
     /*background-color: #69af72;*/
-    background-color: #19882c;
+    background-color: #aba728;
     font-weight: bold;
     color: white;
 }
@@ -203,7 +203,7 @@ tr.clickable-row:hover {
     cursor: pointer;
 }
 tr.linha-selecionada, tr.clickable-row.linha-selecionada:hover {
-    background-color: #dff0d8;
+    background-color: #f0ead8;
 }
 tr.linha-presidente{
     background-color: #d8e6f0;
@@ -244,6 +244,22 @@ button.botao-reduzido, a.botao-reduzido {
 button.botao-reduzido span, a.botao-reduzido span {
     padding-left: 1px;
 }
+.home a.button {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    max-width: 440px;
+    border: 2px solid #000;
+    background: #715612;
+    background: -moz-linear-gradient(top,#cca33c 30%,#715612 99%)!important;
+    background: -webkit-linear-gradient(top,#cca33c 30%,#715612 99%)!important;
+    background: linear-gradient(to bottom,#cca33c 30%,#715612 99%)!important;
+}
+
 .panel {
     margin-bottom: 0px;
 }

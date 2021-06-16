@@ -14,7 +14,7 @@ CREATE TABLE `password_resets` (
 CREATE TABLE `users` (
 	`id` int PRIMARY KEY AUTO_INCREMENT,
 	`name` varchar(191) NOT NULL,
-	`cpf` char(14) NOT NULL UNIQUE,
+	`login` varchar(31) NOT NULL UNIQUE,
 	`email` varchar(64) NOT NULL UNIQUE,
 	`email_verified_at` timestamp NULL,
 	`password` varchar(191) NOT NULL,
