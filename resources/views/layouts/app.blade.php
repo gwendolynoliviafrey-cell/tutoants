@@ -29,6 +29,16 @@
 
     <link href="{{ asset('css/style.css')  }}" rel="stylesheet"/>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="/js/gtag.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-3YH9DYNQ4T');
+    </script>
+
     @inject('resources', 'App\Services\ResourcesService')
 </head>
 <body>
