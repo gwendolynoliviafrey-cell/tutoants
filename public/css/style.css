@@ -139,9 +139,19 @@ table.table>tbody>tr>td, table.table>tbody>tr>th {
 }
 .panel-default > .panel-heading, .card > .card-header {
     /*background-color: #69af72;*/
-    background-color: #aba728;
+    /*background-color: #aba728;*/
+    background: #715612;
+    background: -moz-linear-gradient(top,#cca33c 30%,#715612 99%)!important;
+    background: -webkit-linear-gradient(top,#cca33c 30%,#715612 99%)!important;
+    background: linear-gradient(to bottom,#cca33c 30%,#715612 99%)!important;
     font-weight: bold;
-    color: white;
+    color: black;
+}
+
+@keyframes example {
+    0% {background-color: #863506bb}
+    50% {background-color: #cca33cbb}
+    100% {background-color: #863506bb}
 }
 
 .modal-dialog-centered {
@@ -204,6 +214,10 @@ tr.clickable-row:hover {
 }
 tr.linha-selecionada, tr.clickable-row.linha-selecionada:hover {
     background-color: #f0ead8;
+    text-transform: uppercase;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 tr.linha-presidente{
     background-color: #d8e6f0;
