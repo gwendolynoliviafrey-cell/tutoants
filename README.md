@@ -65,6 +65,6 @@ Adicione:
 
 ## Acessando
 
-Acesse pelo navegador através do link [http://<sistema>](http://<sistema>/)
+Acesse pelo navegador através do link `http://<sistema>/`
 
 
