@@ -107,7 +107,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-static-top\">\n\t<div class=\"container\">\n\t\t<div class=\"navbar-header\">\n\n\t\t\t<!-- Collapsed Hamburger -->\n\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#app-navbar-collapse\" aria-expanded=\"false\">\n\t\t\t\t<span class=\"sr-only\">Toggle Navigation</span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t</button>\n\n\t\t\t<!-- Branding Image -->\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\" style=\"padding: 0px 15px;\">\n\t\t\t\t<img src=\"img/logo.png\" alt=\"Logo\" style=\"width: 75px;\">\n\t\t\t</a>\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\">\n\t\t\t\t{{ appName }}\n\t\t\t</a>\n\t\t</div>\n\n\t\t<div class=\"collapse navbar-collapse\" id=\"app-navbar-collapse\">\n\t\t\t<!-- Left Side Of Navbar -->\n\t\t\t\n\t\t\t<app-menu>Carregando Menus...</app-menu>\n\n\t\t\t<!-- Right Side Of Navbar -->\n\t\t\t\n\t\t</div>\n\t</div>\n</nav>\n\n\n<div id=\"app\" style=\"background-color: #020100; background-position-x: center; background-repeat-y: no-repeat; background-image: url(/img/fundo2.jpg);\">\n    \n\t<div class=\"container\">\n\t\t<router-outlet></router-outlet>\n\t\t<footer class=\"footer\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<p>© {{ appName }}</p>\n\t\t\t</div>\n\t\t</footer>\n\t</div>\n\t\n\n</div>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-static-top\">\n\t<div class=\"container\">\n\t\t<div class=\"navbar-header\">\n\n\t\t\t<!-- Collapsed Hamburger -->\n\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#app-navbar-collapse\" aria-expanded=\"false\">\n\t\t\t\t<span class=\"sr-only\">Toggle Navigation</span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t</button>\n\n\t\t\t<!-- Branding Image -->\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\" style=\"padding: 0px 15px;\">\n\t\t\t\t<img src=\"img/logo.png\" alt=\"Logo\" style=\"width: 75px;\">\n\t\t\t</a>\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\">\n\t\t\t\t{{ appName }}\n\t\t\t</a>\n\t\t</div>\n\n\t\t<div class=\"collapse navbar-collapse\" id=\"app-navbar-collapse\">\n\t\t\t<!-- Left Side Of Navbar -->\n\t\t\t\n\t\t\t<app-menu>Carregando Menus...</app-menu>\n\n\t\t\t<!-- Right Side Of Navbar -->\n\t\t\t\n\t\t</div>\n\t</div>\n</nav>\n\n\n<div id=\"app\" style=\"background-color: #020100; background-position-x: center; background-repeat-y: no-repeat; background-image: url(/img/fundo2.jpg);\">\n    \n\t<div class=\"container\">\n\t\t<router-outlet></router-outlet>\n\t\t<footer class=\"footer\">\n\t\t\t<div class=\"container\" style=\"width: 100%;\">\n\t\t\t\t<p>\"The Ants: Underground Kingdom\" are copyright of StarUnion. All trademarked images and names are property of their respective owners, and any such material is used on this site for educational and helping players purposes only. TutoAnts has no affiliation with StarUnion.</p>\n\t\t\t</div>\n\t\t</footer>\n\t</div>\n\t\n\n</div>\n"
 
 /***/ }),
 
@@ -199,6 +199,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_menu_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./menu/menu.component */ "./src/app/menu/menu.component.ts");
 /* harmony import */ var _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./colony-actions/colony-actions.component */ "./src/app/colony-actions/colony-actions.component.ts");
 /* harmony import */ var _colony_actions_colony_actions_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./colony-actions/colony-actions.service */ "./src/app/colony-actions/colony-actions.service.ts");
+/* harmony import */ var _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./contribute/contribute.component */ "./src/app/contribute/contribute.component.ts");
+
 
 
 
@@ -223,6 +225,7 @@ __webpack_require__.r(__webpack_exports__);
 var appRoutes = [
     { path: 'painel', component: _painel_painel_component__WEBPACK_IMPORTED_MODULE_16__["PainelComponent"] },
     { path: 'colony-actions', component: _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__["ColonyActionsComponent"] },
+    { path: 'contribute', component: _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__["ContributeComponent"] },
     { path: 'users', component: _users_users_component__WEBPACK_IMPORTED_MODULE_9__["UsersComponent"] },
     /*{ path: '',
       redirectTo: '/',
@@ -246,6 +249,7 @@ var AppModule = /** @class */ (function () {
                 _zeros_pipe__WEBPACK_IMPORTED_MODULE_17__["ZerosPipe"],
                 _menu_menu_component__WEBPACK_IMPORTED_MODULE_18__["MenuComponent"],
                 _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__["ColonyActionsComponent"],
+                _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__["ContributeComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -640,6 +644,62 @@ var DiaSemana = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/contribute/contribute.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/contribute/contribute.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-default\">\n\t<div class=\"panel-heading\">Contribute</div>\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div class=\"home\" style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label style=\"font-size: larger;\">This project is run by and for The Ant's fans! \n\t\t\t\tHelp support us so we can keep it running and develop new resources and features.</label> \n\t\t\t<a href=\"https://www.patreon.com/tutoants\" class=\"button\">\n\t\t\t\t<h2 class=\"icon-battle\">Patreon</h2>\n\t\t\t\t<p>Check out our Patreon page, where you can lend your support and receive some potential perks like a callout on the site and access to site library</p>\n\t\t\t</a>\n\t\t\t\n\t\t\t<label style=\"font-size: larger;\">Send your question, suggestion, compliment and/or complaint to us via email: <a href=\"mailto:contato@tutoants.online\">contato@tutoants.online</a></label>\n\t\t</div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/contribute/contribute.component.less":
+/*!******************************************************!*\
+  !*** ./src/app/contribute/contribute.component.less ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbnRyaWJ1dGUvY29udHJpYnV0ZS5jb21wb25lbnQubGVzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/contribute/contribute.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/contribute/contribute.component.ts ***!
+  \****************************************************/
+/*! exports provided: ContributeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContributeComponent", function() { return ContributeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ContributeComponent = /** @class */ (function () {
+    function ContributeComponent() {
+    }
+    ContributeComponent.prototype.ngOnInit = function () {
+    };
+    ContributeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-contribute',
+            template: __webpack_require__(/*! ./contribute.component.html */ "./src/app/contribute/contribute.component.html"),
+            styles: [__webpack_require__(/*! ./contribute.component.less */ "./src/app/contribute/contribute.component.less")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ContributeComponent);
+    return ContributeComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/dados.service.ts":
 /*!**********************************!*\
   !*** ./src/app/dados.service.ts ***!
@@ -766,7 +826,7 @@ var FormatadorDataPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"panel panel-default\">\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div class=\"home\" style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label style=\"font-size: larger;\">Welcome to TutoAnts site! We're an tool for helping on play the game \"The Ants: Underground Kingdom\". \n\t\t\t\tCheck out the links below to get started</label> \n\t\t\t<a routerLink=\"/colony-actions\" class=\"button\">\n\t\t\t\t<h2 class=\"icon-battle\">Colony Action Event Schedule</h2>\n\t\t\t\t<p>See all Colony Action Events of Week </p>\n\t\t\t</a>\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "\n<div class=\"panel panel-default\">\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div class=\"home\" style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label style=\"font-size: larger;\">Welcome to TutoAnts site! We're an tool for helping on play the game \"The Ants: Underground Kingdom\". \n\t\t\t\tCheck out the links below to get started</label> \n\t\t\t<a routerLink=\"/colony-actions\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-calendar\" aria-hidden=\"true\"><span>Colony Action Event Schedule</span></h2>\n\t\t\t\t<p>See all Colony Action Events of Week </p>\n\t\t\t</a>\n\t\t\t<a routerLink=\"/contribute\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-heart\" aria-hidden=\"true\"><span>Contribute</span></h2>\n\t\t\t\t<p>Help us grow!</p>\n\t\t\t</a>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -822,7 +882,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav navbar-nav\">\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tHome\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/colony-actions\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tColony Actions Table\n\t\t</a>\n\t</li>\n\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tLinks\n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tAdministração \n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<li>\n\t\t\t\t\t<a routerLink=\"/users\">\n\t\t\t\t\t\tUsuários\n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t&nbsp;\n</ul>"
+module.exports = "<ul class=\"nav navbar-nav\">\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/colony-actions\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tColony Actions Table\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/contribute\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tContribute\n\t\t</a>\n\t</li>\n\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tLinks\n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tAdministração \n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<li>\n\t\t\t\t\t<a routerLink=\"/users\">\n\t\t\t\t\t\tUsuários\n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t&nbsp;\n</ul>"
 
 /***/ }),
 

@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}</title>
+    <title>TutoAnts | An tool for helping on play the game "The Ants: Underground Kingdom"</title>
 
     <link rel="shortcut icon" href="/favicon.png" />
 

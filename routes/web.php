@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ColonyActionsController;
+use App\Http\Controllers\ContributeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,8 @@ Route::get(     '/painel',                       [UsersController::class,       
 */
 
 Route::get(     '/colony-actions',               [ColonyActionsController::class,   'index'                         ]);
+
+Route::get(     '/contribute',                   [ContributeController::class,      'index'                         ]);
 
 
 /*

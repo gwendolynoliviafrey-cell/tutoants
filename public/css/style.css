@@ -118,7 +118,7 @@ table.table>caption>table>tbody>tr>td {
     vertical-align: middle;
 }
 .footer {
-    background-color: #271503;
+    background-color: #27150360;
 }
 .footer p {
     color: white;
@@ -266,12 +266,16 @@ button.botao-reduzido span, a.botao-reduzido span {
     margin: 20px auto;
     padding: 10px;
     box-sizing: border-box;
-    max-width: 440px;
+    max-width: 400px;
     border: 2px solid #000;
     background: #715612;
     background: -moz-linear-gradient(top,#cca33c 30%,#715612 99%)!important;
     background: -webkit-linear-gradient(top,#cca33c 30%,#715612 99%)!important;
     background: linear-gradient(to bottom,#cca33c 30%,#715612 99%)!important;
+}
+.home a.button span {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10px;
 }
 
 .panel {

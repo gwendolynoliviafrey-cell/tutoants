@@ -9,7 +9,7 @@
     @if(isset($param))
         <input type="hidden" id="uid" name="uid" value="{{$param}}">
     @endif
-    <app-root><i style="text-align: center; display: block">Carregando...</i></app-root>
+    <app-root><i style="text-align: center; display: block">Loading...</i></app-root>
 @endsection
 
 @section('postscripts')
