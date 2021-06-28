@@ -17,6 +17,6 @@
     <script type="text/javascript" src="{{ asset('js/angular/polyfills.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/angular/styles.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/angular/vendor.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/angular/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/angular/main-1.0.0.js') }}"></script>
 @endsection
 

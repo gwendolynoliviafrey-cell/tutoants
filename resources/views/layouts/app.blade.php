@@ -27,7 +27,7 @@
 
     @yield('innerhead')
 
-    <link href="{{ asset('css/style.css')  }}" rel="stylesheet"/>
+    <link href="{{ asset('css/style-1.0.0.css')  }}" rel="stylesheet"/>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="/js/gtag.js"></script>
