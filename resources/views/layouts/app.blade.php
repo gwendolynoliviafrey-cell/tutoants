@@ -10,7 +10,7 @@
 
     <title>TutoAnts | An tool for helping on play the game "The Ants: Underground Kingdom"</title>
 
-    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

@@ -200,6 +200,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./colony-actions/colony-actions.component */ "./src/app/colony-actions/colony-actions.component.ts");
 /* harmony import */ var _colony_actions_colony_actions_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./colony-actions/colony-actions.service */ "./src/app/colony-actions/colony-actions.service.ts");
 /* harmony import */ var _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./contribute/contribute.component */ "./src/app/contribute/contribute.component.ts");
+/* harmony import */ var _special_ant_exp_special_ant_exp_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./special-ant-exp/special-ant-exp.component */ "./src/app/special-ant-exp/special-ant-exp.component.ts");
+/* harmony import */ var _special_ant_exp_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./special-ant-exp/special-ant-exp.service */ "./src/app/special-ant-exp/special-ant-exp.service.ts");
+
+
 
 
 
@@ -225,6 +229,7 @@ __webpack_require__.r(__webpack_exports__);
 var appRoutes = [
     { path: 'painel', component: _painel_painel_component__WEBPACK_IMPORTED_MODULE_16__["PainelComponent"] },
     { path: 'colony-actions', component: _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__["ColonyActionsComponent"] },
+    { path: 'special-ant-exp', component: _special_ant_exp_special_ant_exp_component__WEBPACK_IMPORTED_MODULE_22__["SpecialAntExpComponent"] },
     { path: 'contribute', component: _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__["ContributeComponent"] },
     { path: 'users', component: _users_users_component__WEBPACK_IMPORTED_MODULE_9__["UsersComponent"] },
     /*{ path: '',
@@ -250,6 +255,7 @@ var AppModule = /** @class */ (function () {
                 _menu_menu_component__WEBPACK_IMPORTED_MODULE_18__["MenuComponent"],
                 _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__["ColonyActionsComponent"],
                 _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__["ContributeComponent"],
+                _special_ant_exp_special_ant_exp_component__WEBPACK_IMPORTED_MODULE_22__["SpecialAntExpComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -264,6 +270,7 @@ var AppModule = /** @class */ (function () {
             providers: [
                 _dados_service__WEBPACK_IMPORTED_MODULE_15__["DadosService"],
                 _colony_actions_colony_actions_service__WEBPACK_IMPORTED_MODULE_20__["ColonyActionsService"],
+                _special_ant_exp_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_23__["SpecialAntExpService"],
                 _users_users_service__WEBPACK_IMPORTED_MODULE_11__["UsersService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
@@ -378,7 +385,7 @@ var ColonyAction = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\n\t<div class=\"panel-heading\">Colony Action Event Schedule</div>\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label>Day of Week:</label><br>\n\t\t\t<select class=\"form-control\" name=\"dia-selecionado\" [(ngModel)]=\"diaSelecionadoId\" (change)=\"selecionaDia()\" style=\"max-width: 410px;\" [disabled]=\"!editavel\">   \n\t\t\t\t<option hidden disabled [value]=\"0\" selected> -- Select -- </option>  \n\t\t\t\t<option *ngFor=\"let d of dias\" [value]=\"d.id\">Day {{d.id}}: {{d.day}} - Warzone Event: {{d.event}}</option>       \n\t\t\t</select><br>\n\t\t\t<label>Timezone:</label><br>\n\t\t\t<select class=\"form-control\" name=\"timezone\" [(ngModel)]=\"timezoneOffset\" (change)=\"selecionaTimezone()\" style=\"max-width: 410px;\" [disabled]=\"!editavel\">   \n\t\t\t\t<option hidden disabled [value]=\"0\" selected> -- Select -- </option>  \n\t\t\t\t<option [value]=\"LOCAL_TIMEZONE_OFFSET\">{{LOCAL_TIMEZONE_STRING}}</option>\n\t\t\t\t<option [value]=\"0\">UTC (Universal / Greenwich)</option>      \n\t\t\t</select><br>\n\t\t\t<div *ngIf=\"diaSelecionado.colonyActionsIndex\">\n\t\t\t\t<div style=\"overflow-x: auto;\">\n\t\t\t\t\t<table class=\"table\" data-toggle=\"table\" style=\"table-layout: auto;\">\n\t\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t\t<col width=\"120px\"/>\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t</colgroup>\n\t\t\t\t\t\t<thead class=\"thead-light\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<th style=\"text-align: center\">SCHEDULE</th>\n\t\t\t\t\t\t\t\t<th title=\"EVENT\">EVENT</th>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t<!--tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" class=\"clickable-row\" (click)=\"selecionarEvento(evento)\" [ngClass]=\"{'linha-selecionada': evento.id == eventoSelecionado.id}\"-->\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center; white-space: nowrap;\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td style=\"white-space: nowrap;\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t<ng-container *ngIf=\"isInnerEvent(evento.sequencial)\"><label style=\"font-weight: bold; text-transform: initial;\">(Event in Progress)</label><br></ng-container>\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial + 8)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center; white-space: nowrap;\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial + 8)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td style=\"white-space: nowrap;\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t<ng-container *ngIf=\"isInnerEvent(evento.sequencial + 8)\"><label style=\"font-weight: bold; text-transform: initial;\">(Event in Progress)</label><br></ng-container>\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial + 16)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center; white-space: nowrap;\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial + 16)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td style=\"white-space: nowrap;\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t<ng-container *ngIf=\"isInnerEvent(evento.sequencial + 16)\"><label style=\"font-weight: bold; text-transform: initial;\">(Event in Progress)</label><br></ng-container>\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t<!--tfoot class=\"status-tabela\">\n\t\t\t\t\t\t\t<tr *ngIf=\"status == LOADING\"><td colspan=\"6\"><i>Carregando Macros...</i></td></tr>\n\t\t\t\t\t\t\t<tr *ngIf=\"macros != null && macros.length == 0 && status == COMPLETE\"><td colspan=\"6\"><i>Não Há Macros para serem listadas</i></td></tr>\n\t\t\t\t\t\t\t<tr *ngIf=\"status == ERROR\"><td class=\"erro\" colspan=\"6\"><i>Falha na obtenção das Macros!</i></td></tr>\n\t\t\t\t\t\t</tfoot-->\n\t\t\t\t\t</table>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<div class=\"panel panel-default\">\n\t<div class=\"panel-heading\">Colony Action Event Schedule</div>\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label>Day of Week:</label><br>\n\t\t\t<select class=\"form-control\" name=\"dia-selecionado\" [(ngModel)]=\"diaSelecionadoId\" (change)=\"selecionaDia()\" style=\"max-width: 410px;\" [disabled]=\"!editavel\">   \n\t\t\t\t<option hidden disabled [value]=\"0\" selected> -- Select -- </option>  \n\t\t\t\t<option *ngFor=\"let d of dias\" [value]=\"d.id\">Day {{d.id}}: {{d.day}} - Warzone Event: {{d.event}}</option>       \n\t\t\t</select><br>\n\t\t\t<label>Timezone:</label><br>\n\t\t\t<select class=\"form-control\" name=\"timezone\" [(ngModel)]=\"timezoneOffset\" (change)=\"selecionaTimezone()\" style=\"max-width: 410px;\" [disabled]=\"!editavel\">   \n\t\t\t\t<option hidden disabled value selected> -- Select -- </option>  \n\t\t\t\t<option [value]=\"LOCAL_TIMEZONE_OFFSET\">{{LOCAL_TIMEZONE_STRING}}</option>\n\t\t\t\t<option [value]=\"0\">UTC (Universal / Greenwich)</option>      \n\t\t\t</select><br>\n\t\t\t<div *ngIf=\"diaSelecionado.colonyActionsIndex\">\n\t\t\t\t<div style=\"overflow-x: auto;\">\n\t\t\t\t\t<table class=\"table\" data-toggle=\"table\" style=\"table-layout: auto;\">\n\t\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t\t<col width=\"120px\"/>\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t</colgroup>\n\t\t\t\t\t\t<thead class=\"thead-light\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<th style=\"text-align: center\">SCHEDULE</th>\n\t\t\t\t\t\t\t\t<th title=\"EVENT\">EVENT</th>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t<!--tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" class=\"clickable-row\" (click)=\"selecionarEvento(evento)\" [ngClass]=\"{'linha-selecionada': evento.id == eventoSelecionado.id}\"-->\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center; white-space: nowrap;\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td style=\"white-space: nowrap;\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t<ng-container *ngIf=\"isInnerEvent(evento.sequencial)\"><label style=\"font-weight: bold; text-transform: initial;\">(Event in Progress)</label><br></ng-container>\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial + 8)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center; white-space: nowrap;\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial + 8)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td style=\"white-space: nowrap;\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t<ng-container *ngIf=\"isInnerEvent(evento.sequencial + 8)\"><label style=\"font-weight: bold; text-transform: initial;\">(Event in Progress)</label><br></ng-container>\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<tr *ngFor=\"let evento of diaSelecionado.colonyActionsIndex.getListaOrigin()\" [ngClass]=\"{'linha-selecionada': isInnerEvent(evento.sequencial + 16)}\">\n\t\t\t\t\t\t\t\t<td style=\"text-align: center; white-space: nowrap;\">\n\t\t\t\t\t\t\t\t\t{{getDateLine(evento.sequencial + 16)}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td style=\"white-space: nowrap;\" title=\"{{evento.descricao}}\">\n\t\t\t\t\t\t\t\t\t<ng-container *ngIf=\"isInnerEvent(evento.sequencial + 16)\"><label style=\"font-weight: bold; text-transform: initial;\">(Event in Progress)</label><br></ng-container>\n\t\t\t\t\t\t\t\t\t{{evento.descricao}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t<!--tfoot class=\"status-tabela\">\n\t\t\t\t\t\t\t<tr *ngIf=\"status == LOADING\"><td colspan=\"6\"><i>Carregando Macros...</i></td></tr>\n\t\t\t\t\t\t\t<tr *ngIf=\"macros != null && macros.length == 0 && status == COMPLETE\"><td colspan=\"6\"><i>Não Há Macros para serem listadas</i></td></tr>\n\t\t\t\t\t\t\t<tr *ngIf=\"status == ERROR\"><td class=\"erro\" colspan=\"6\"><i>Falha na obtenção das Macros!</i></td></tr>\n\t\t\t\t\t\t</tfoot-->\n\t\t\t\t\t</table>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -455,8 +462,14 @@ var ColonyActionsComponent = /** @class */ (function (_super) {
         var end = new Date(this.TIME_NOW.getTime() + this.timezoneSelecionado + (sequencial * this.TIMESTAMP_PLUS) + this.TIME_59).toTimeString().slice(0, 5);
         return start + " ~ " + end;
     };
+    ColonyActionsComponent.prototype.getDiaIdAtual = function () {
+        var d = new Date(new Date().getTime() - this.LOCAL_TIMEZONE_OFFSET).getDay();
+        if (d > 0)
+            return d;
+        return 7;
+    };
     ColonyActionsComponent.prototype.isInnerEvent = function (sequencial) {
-        if (this.diaSelecionadoId != new Date(new Date().getTime() - this.LOCAL_TIMEZONE_OFFSET).getDay())
+        if (this.diaSelecionadoId != this.getDiaIdAtual())
             return false;
         var start = new Date(this.TIME_NOW.getTime() + this.LOCAL_TIMEZONE_OFFSET + (sequencial * this.TIMESTAMP_PLUS));
         var end = new Date(this.TIME_NOW.getTime() + this.LOCAL_TIMEZONE_OFFSET + (sequencial * this.TIMESTAMP_PLUS) + this.TIME_59);
@@ -466,7 +479,7 @@ var ColonyActionsComponent = /** @class */ (function (_super) {
         this.timezoneOffset = this.LOCAL_TIMEZONE_OFFSET;
         this.selecionaTimezone();
         this.editavel = true;
-        this.diaSelecionadoId = new Date(new Date().getTime() - this.LOCAL_TIMEZONE_OFFSET).getDay();
+        this.diaSelecionadoId = this.getDiaIdAtual();
         this.selecionaDia();
     };
     ColonyActionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -564,14 +577,14 @@ var ColonyActionsService = /** @class */ (function () {
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](46, "Building + Evolution + Hatching Speedup", 6, 5),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](47, "Building + Hatching Troops", 6, 6),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](48, "Evolution + Hatching Troops", 6, 7),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](49, "Use Any Speedup", 7, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](50, "Evolution + Evolution Speedup", 7, 1),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](51, "Building + Building Speedup", 7, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](52, "Use Hatching Speedup", 7, 3),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](53, "Building + Evolution + Hatching Speedup", 7, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](54, "Building + Evolution + Hatching Speedup", 7, 5),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](55, "Building + Hatching Troops", 7, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](56, "Evolution + Hatching Troops", 7, 7),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](49, "Building + Building Speedup", 7, 0),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](50, "All Insect Development + Use Any Speedup", 7, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](51, "Building + Evolution + Hatching Speedup", 7, 2),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](52, "All Insect Development + Evolution + Evolution Speedup", 7, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](53, "Use Any Speedup", 7, 4),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](54, "All Insect Development", 7, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](55, "Building + Evolution + Hatching Speedup", 7, 6),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](56, "All Insect Development + Use Any Speedup", 7, 7),
         ];
         this.diasIndex = null;
         this.obtemDias();
@@ -826,7 +839,7 @@ var FormatadorDataPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"panel panel-default\">\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div class=\"home\" style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label style=\"font-size: larger;\">Welcome to TutoAnts site! We're an tool for helping on play the game \"The Ants: Underground Kingdom\". \n\t\t\t\tCheck out the links below to get started</label> \n\t\t\t<a routerLink=\"/colony-actions\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-calendar\" aria-hidden=\"true\"><span>Colony Action Event Schedule</span></h2>\n\t\t\t\t<p>See all Colony Action Events of Week </p>\n\t\t\t</a>\n\t\t\t<a routerLink=\"/contribute\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-heart\" aria-hidden=\"true\"><span>Contribute</span></h2>\n\t\t\t\t<p>Help us grow!</p>\n\t\t\t</a>\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "\n<div class=\"panel panel-default\">\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div class=\"home\" style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label style=\"font-size: larger;\">Welcome to TutoAnts site! We're an tool for helping on play the game \"The Ants: Underground Kingdom\". \n\t\t\t\tCheck out the links below to get started</label> \n\t\t\t<a routerLink=\"/colony-actions\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-calendar\" aria-hidden=\"true\"><span>Colony Action Event Schedule</span></h2>\n\t\t\t\t<p>See all Colony Action Events of Week </p>\n\t\t\t</a>\n\t\t\t<a routerLink=\"/special-ant-exp\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-list\" aria-hidden=\"true\"><span>Special Ants Exp Table</span></h2>\n\t\t\t\t<p>See the list off all necessary Exp for leveling special ants</p>\n\t\t\t</a>\n\t\t\t<a routerLink=\"/contribute\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-heart\" aria-hidden=\"true\"><span>Contribute</span></h2>\n\t\t\t\t<p>Help us grow!</p>\n\t\t\t</a>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -882,7 +895,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav navbar-nav\">\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/colony-actions\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tColony Actions Table\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/contribute\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tContribute\n\t\t</a>\n\t</li>\n\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tLinks\n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tAdministração \n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<li>\n\t\t\t\t\t<a routerLink=\"/users\">\n\t\t\t\t\t\tUsuários\n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t&nbsp;\n</ul>"
+module.exports = "<ul class=\"nav navbar-nav\">\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/colony-actions\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tColony Actions Table\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/special-ant-exp\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tSpecial Ants Exp Table\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/contribute\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tContribute\n\t\t</a>\n\t</li>\n\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tLinks\n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tAdministração \n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<li>\n\t\t\t\t\t<a routerLink=\"/users\">\n\t\t\t\t\t\tUsuários\n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t&nbsp;\n</ul>"
 
 /***/ }),
 
@@ -1148,6 +1161,189 @@ var Redimensionavel = /** @class */ (function () {
         this.personalizado.funcao(this.personalizado.parametros);
     };
     return Redimensionavel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/special-ant-exp/special-ant-exp.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/special-ant-exp/special-ant-exp.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-default\">\n\t<div class=\"panel-heading\">Special Ant Exp Table</div>\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t\n\t\t\t<div>\n\t\t\t\t<div style=\"overflow-x: auto;\">\n\t\t\t\t\t<table class=\"table\" data-toggle=\"table\" style=\"table-layout: auto;\">\n\t\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t</colgroup>\n\t\t\t\t\t\t<thead class=\"thead-light\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<th>LVL</th>\n\t\t\t\t\t\t\t\t<th title=\"XP\">XP</th>\n\t\t\t\t\t\t\t\t<th title=\"TOTAL XP\">TOTAL XP</th>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t<tr *ngFor=\"let xp of specialAntExpTable\">\n\t\t\t\t\t\t\t\t<td>{{xp.id}} &gt;&gt; {{xp.id+1}} </td>\n\t\t\t\t\t\t\t\t<td>{{xp.xp}}</td>\n\t\t\t\t\t\t\t\t<td>{{xp.xp_total}}</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</tbody>\n\t\t\t\t\t</table>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/special-ant-exp/special-ant-exp.component.less":
+/*!****************************************************************!*\
+  !*** ./src/app/special-ant-exp/special-ant-exp.component.less ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NwZWNpYWwtYW50LWV4cC9zcGVjaWFsLWFudC1leHAuY29tcG9uZW50Lmxlc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/special-ant-exp/special-ant-exp.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/special-ant-exp/special-ant-exp.component.ts ***!
+  \**************************************************************/
+/*! exports provided: SpecialAntExpComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpecialAntExpComponent", function() { return SpecialAntExpComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _special_ant_exp_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./special-ant-exp.service */ "./src/app/special-ant-exp/special-ant-exp.service.ts");
+
+
+
+var SpecialAntExpComponent = /** @class */ (function () {
+    function SpecialAntExpComponent(specialAntExpService) {
+        this.specialAntExpService = specialAntExpService;
+    }
+    Object.defineProperty(SpecialAntExpComponent.prototype, "specialAntExpTable", {
+        get: function () {
+            return this.specialAntExpService.specialAntExpTable;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SpecialAntExpComponent.prototype.ngOnInit = function () {
+    };
+    SpecialAntExpComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-special-ant-exp',
+            template: __webpack_require__(/*! ./special-ant-exp.component.html */ "./src/app/special-ant-exp/special-ant-exp.component.html"),
+            styles: [__webpack_require__(/*! ./special-ant-exp.component.less */ "./src/app/special-ant-exp/special-ant-exp.component.less")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExpService"]])
+    ], SpecialAntExpComponent);
+    return SpecialAntExpComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/special-ant-exp/special-ant-exp.service.ts":
+/*!************************************************************!*\
+  !*** ./src/app/special-ant-exp/special-ant-exp.service.ts ***!
+  \************************************************************/
+/*! exports provided: SpecialAntExpService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpecialAntExpService", function() { return SpecialAntExpService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./special-ant-exp */ "./src/app/special-ant-exp/special-ant-exp.ts");
+
+
+
+var SpecialAntExpService = /** @class */ (function () {
+    function SpecialAntExpService() {
+        this.specialAntExpTable = [
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](1, 20, 20),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](2, 40, 60),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](3, 420, 480),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](4, 2660, 3140),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](5, 5130, 8270),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](6, 8040, 16310),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](7, 9060, 25370),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](8, 10170, 35540),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](9, 12530, 48070),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](10, 13360, 61430),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](11, 14660, 76090),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](12, 48830, 124920),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](13, 54220, 179140),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](14, 62180, 241320),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](15, 70040, 311360),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](16, 87510, 398870),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](17, 93330, 492200),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](18, 101140, 593340),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](19, 109000, 702340),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](20, 223140, 925480),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](21, 320650, 1246130),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](22, 479440, 1725570),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](23, 619060, 2344630),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](24, 698990, 3043620),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](25, 903440, 3947060),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](26, 952130, 4899190),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](27, 1027060, 5926250),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](28, 1080810, 7007060),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](29, 1144080, 8151140),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](30, 1207000, 9358140),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](31, 1281430, 10639570),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](32, 1415660, 12055230),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](33, 1542920, 13598150),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](34, 2176870, 15775020),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](35, 2473840, 18248860),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](36, 2692620, 20941480),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](37, 3002570, 23944050),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](38, 3262050, 27206100),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](39, 3633020, 30839120),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](40, 3945070, 34784190),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](41, 4331060, 39115250),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](42, 4768210, 43883460),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](43, 5326300, 49209760),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](44, 5865180, 55074940),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](45, 6444040, 61518980),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](46, 7074760, 68593740),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](47, 7681540, 76275280),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](48, 8582730, 84858010),
+            new _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExp"](49, 9427100, 94285110)
+        ];
+    }
+    SpecialAntExpService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], SpecialAntExpService);
+    return SpecialAntExpService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/special-ant-exp/special-ant-exp.ts":
+/*!****************************************************!*\
+  !*** ./src/app/special-ant-exp/special-ant-exp.ts ***!
+  \****************************************************/
+/*! exports provided: SpecialAntExp */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpecialAntExp", function() { return SpecialAntExp; });
+var SpecialAntExp = /** @class */ (function () {
+    function SpecialAntExp(id, xp, xp_total) {
+        if (typeof id == "number") {
+            this.id = id;
+            this.xp = xp;
+            this.xp_total = xp_total;
+        }
+        else {
+            this.id = parseInt(id['id']);
+            this.xp = id['xp'];
+            this.xp_total = id['xp_total'];
+        }
+    }
+    SpecialAntExp.generate = function () {
+        return new SpecialAntExp(0, 0, 0);
+    };
+    SpecialAntExp.prototype.clone = function () {
+        return new SpecialAntExp(this.id, this.xp, this.xp_total);
+    };
+    return SpecialAntExp;
 }());
 
 
