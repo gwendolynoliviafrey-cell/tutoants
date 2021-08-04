@@ -107,7 +107,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-static-top\">\n\t<div class=\"container\">\n\t\t<div class=\"navbar-header\">\n\n\t\t\t<!-- Collapsed Hamburger -->\n\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#app-navbar-collapse\" aria-expanded=\"false\">\n\t\t\t\t<span class=\"sr-only\">Toggle Navigation</span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t</button>\n\n\t\t\t<!-- Branding Image -->\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\" style=\"padding: 0px 15px;\">\n\t\t\t\t<img src=\"img/logo.png\" alt=\"Logo\" style=\"width: 75px;\">\n\t\t\t</a>\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\">\n\t\t\t\t{{ appName }}\n\t\t\t</a>\n\t\t</div>\n\n\t\t<div class=\"collapse navbar-collapse\" id=\"app-navbar-collapse\">\n\t\t\t<!-- Left Side Of Navbar -->\n\t\t\t\n\t\t\t<app-menu>Carregando Menus...</app-menu>\n\n\t\t\t<!-- Right Side Of Navbar -->\n\t\t\t\n\t\t</div>\n\t</div>\n</nav>\n\n\n<div id=\"app\" style=\"background-color: #020100; background-position-x: center; background-repeat-y: no-repeat; background-image: url(/img/fundo2.jpg);\">\n    \n\t<div class=\"container\">\n\t\t<router-outlet></router-outlet>\n\t\t<footer class=\"footer\">\n\t\t\t<div class=\"container\" style=\"width: 100%;\">\n\t\t\t\t<p>\"The Ants: Underground Kingdom\" are copyright of StarUnion. All trademarked images and names are property of their respective owners, and any such material is used on this site for educational and helping players purposes only. TutoAnts has no affiliation with StarUnion.</p>\n\t\t\t</div>\n\t\t</footer>\n\t</div>\n\t\n\n</div>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-static-top\">\n\t<div class=\"container\">\n\t\t<div class=\"navbar-header\">\n\n\t\t\t<!-- Collapsed Hamburger -->\n\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#app-navbar-collapse\" aria-expanded=\"false\">\n\t\t\t\t<span class=\"sr-only\">Toggle Navigation</span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t</button>\n\n\t\t\t<!-- Branding Image -->\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\" style=\"padding: 0px 15px;\">\n\t\t\t\t<img src=\"img/logo.png\" alt=\"Logo\" style=\"width: 75px;\">\n\t\t\t</a>\n\t\t\t<a class=\"navbar-brand\" routerLink=\"/\">\n\t\t\t\t{{ appName }}\n\t\t\t</a>\n\t\t</div>\n\n\t\t<div class=\"collapse navbar-collapse\" id=\"app-navbar-collapse\">\n\t\t\t<!-- Left Side Of Navbar -->\n\t\t\t\n\t\t\t<app-menu>Loading Menus...</app-menu>\n\n\t\t\t<!-- Right Side Of Navbar -->\n\t\t\t\n\t\t</div>\n\t</div>\n</nav>\n\n\n<div id=\"app\" style=\"background-color: #020100; background-position-x: center; background-repeat-y: no-repeat; background-image: url(/img/fundo2.jpg);\">\n    \n\t<div class=\"container\">\n\t\t<router-outlet></router-outlet>\n\t\t<footer class=\"footer\">\n\t\t\t<div class=\"container\" style=\"width: 100%;\">\n\t\t\t\t<p>\"The Ants: Underground Kingdom\" are copyright of StarUnion. All trademarked images and names are property of their respective owners, and any such material is used on this site for educational and helping players purposes only. TutoAnts has no affiliation with StarUnion.</p>\n\t\t\t</div>\n\t\t</footer>\n\t</div>\n\t\n\n</div>\n"
 
 /***/ }),
 
@@ -200,8 +200,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./colony-actions/colony-actions.component */ "./src/app/colony-actions/colony-actions.component.ts");
 /* harmony import */ var _colony_actions_colony_actions_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./colony-actions/colony-actions.service */ "./src/app/colony-actions/colony-actions.service.ts");
 /* harmony import */ var _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./contribute/contribute.component */ "./src/app/contribute/contribute.component.ts");
-/* harmony import */ var _special_ant_exp_special_ant_exp_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./special-ant-exp/special-ant-exp.component */ "./src/app/special-ant-exp/special-ant-exp.component.ts");
-/* harmony import */ var _special_ant_exp_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./special-ant-exp/special-ant-exp.service */ "./src/app/special-ant-exp/special-ant-exp.service.ts");
+/* harmony import */ var _plunder_plunder_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./plunder/plunder.component */ "./src/app/plunder/plunder.component.ts");
+/* harmony import */ var _plunder_plunder_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./plunder/plunder.service */ "./src/app/plunder/plunder.service.ts");
+/* harmony import */ var _tables_tables_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./tables/tables.component */ "./src/app/tables/tables.component.ts");
+/* harmony import */ var _tables_special_ant_exp_special_ant_exp_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./tables/special-ant-exp/special-ant-exp.component */ "./src/app/tables/special-ant-exp/special-ant-exp.component.ts");
+/* harmony import */ var _tables_special_ant_exp_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./tables/special-ant-exp/special-ant-exp.service */ "./src/app/tables/special-ant-exp/special-ant-exp.service.ts");
+/* harmony import */ var _tables_zone_develop_creature_remains_zone_develop_creature_remains_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./tables/zone-develop-creature-remains/zone-develop-creature-remains.component */ "./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.ts");
+/* harmony import */ var _tables_t9_creature_remains_t9_creature_remains_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./tables/t9-creature-remains/t9-creature-remains.component */ "./src/app/tables/t9-creature-remains/t9-creature-remains.component.ts");
+
+
+
+
+
 
 
 
@@ -229,7 +239,8 @@ __webpack_require__.r(__webpack_exports__);
 var appRoutes = [
     { path: 'painel', component: _painel_painel_component__WEBPACK_IMPORTED_MODULE_16__["PainelComponent"] },
     { path: 'colony-actions', component: _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__["ColonyActionsComponent"] },
-    { path: 'special-ant-exp', component: _special_ant_exp_special_ant_exp_component__WEBPACK_IMPORTED_MODULE_22__["SpecialAntExpComponent"] },
+    { path: 'tables', component: _tables_tables_component__WEBPACK_IMPORTED_MODULE_24__["TablesComponent"] },
+    { path: 'plunder-calculator', component: _plunder_plunder_component__WEBPACK_IMPORTED_MODULE_22__["PlunderComponent"] },
     { path: 'contribute', component: _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__["ContributeComponent"] },
     { path: 'users', component: _users_users_component__WEBPACK_IMPORTED_MODULE_9__["UsersComponent"] },
     /*{ path: '',
@@ -255,7 +266,11 @@ var AppModule = /** @class */ (function () {
                 _menu_menu_component__WEBPACK_IMPORTED_MODULE_18__["MenuComponent"],
                 _colony_actions_colony_actions_component__WEBPACK_IMPORTED_MODULE_19__["ColonyActionsComponent"],
                 _contribute_contribute_component__WEBPACK_IMPORTED_MODULE_21__["ContributeComponent"],
-                _special_ant_exp_special_ant_exp_component__WEBPACK_IMPORTED_MODULE_22__["SpecialAntExpComponent"],
+                _tables_special_ant_exp_special_ant_exp_component__WEBPACK_IMPORTED_MODULE_25__["SpecialAntExpComponent"],
+                _plunder_plunder_component__WEBPACK_IMPORTED_MODULE_22__["PlunderComponent"],
+                _tables_tables_component__WEBPACK_IMPORTED_MODULE_24__["TablesComponent"],
+                _tables_zone_develop_creature_remains_zone_develop_creature_remains_component__WEBPACK_IMPORTED_MODULE_27__["ZoneDevelopCreatureRemainsComponent"],
+                _tables_t9_creature_remains_t9_creature_remains_component__WEBPACK_IMPORTED_MODULE_28__["T9CreatureRemainsComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -270,7 +285,8 @@ var AppModule = /** @class */ (function () {
             providers: [
                 _dados_service__WEBPACK_IMPORTED_MODULE_15__["DadosService"],
                 _colony_actions_colony_actions_service__WEBPACK_IMPORTED_MODULE_20__["ColonyActionsService"],
-                _special_ant_exp_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_23__["SpecialAntExpService"],
+                _tables_special_ant_exp_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_26__["SpecialAntExpService"],
+                _plunder_plunder_service__WEBPACK_IMPORTED_MODULE_23__["PlunderService"],
                 _users_users_service__WEBPACK_IMPORTED_MODULE_11__["UsersService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
@@ -546,13 +562,13 @@ var ColonyActionsService = /** @class */ (function () {
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](15, "Building + Evolution + Hatching Troops", 2, 6),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](16, "Building + Evolution + Hatching Troops", 2, 7),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](17, "Building + Building Speedup", 3, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](18, "Evolution + Evolution Speedup", 3, 1),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](18, "Evolution + Evolution Speedup + Creature Remains", 3, 1),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](19, "Hatching Speedup", 3, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](20, "Building + Evolution", 3, 3),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](20, "Building + Evolution + Creature Remains", 3, 3),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](21, "Building + Hatching Troops", 3, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](22, "Building Speedup + Evolution Speedup + Hatching Speedup", 3, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](22, "Building Speedup + Evolution Speedup + Hatching Speedup + Creature Remains", 3, 5),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](23, "Building + Evolution + Hatching Speedup", 3, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](24, "Building Speedup + Evolution Speedup + Hatching Speedup", 3, 7),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](24, "Building Speedup + Evolution Speedup + Hatching Speedup + Creature Remains", 3, 7),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](25, "Building + Building Speedup", 4, 0),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](26, "All Special Ant Development", 4, 1),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](27, "Building Speedup + Evolution Speedup + Hatching Speedup", 4, 2),
@@ -582,7 +598,7 @@ var ColonyActionsService = /** @class */ (function () {
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](51, "Building + Evolution + Hatching Speedup", 7, 2),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](52, "All Insect Development + Evolution + Evolution Speedup", 7, 3),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](53, "Use Any Speedup", 7, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](54, "All Insect Development", 7, 5),
+            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](54, "All Insect Development + Hatching Speedup", 7, 5),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](55, "Building + Evolution + Hatching Speedup", 7, 6),
             new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](56, "All Insect Development + Use Any Speedup", 7, 7),
         ];
@@ -839,7 +855,7 @@ var FormatadorDataPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"panel panel-default\">\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div class=\"home\" style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label style=\"font-size: larger;\">Welcome to TutoAnts site! We're an tool for helping on play the game \"The Ants: Underground Kingdom\". \n\t\t\t\tCheck out the links below to get started</label> \n\t\t\t<a routerLink=\"/colony-actions\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-calendar\" aria-hidden=\"true\"><span>Colony Action Event Schedule</span></h2>\n\t\t\t\t<p>See all Colony Action Events of Week </p>\n\t\t\t</a>\n\t\t\t<a routerLink=\"/special-ant-exp\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-list\" aria-hidden=\"true\"><span>Special Ants Exp Table</span></h2>\n\t\t\t\t<p>See the list off all necessary Exp for leveling special ants</p>\n\t\t\t</a>\n\t\t\t<a routerLink=\"/contribute\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-heart\" aria-hidden=\"true\"><span>Contribute</span></h2>\n\t\t\t\t<p>Help us grow!</p>\n\t\t\t</a>\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "\n<div class=\"panel panel-default\">\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div class=\"home\" style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<label style=\"font-size: larger;\">Welcome to TutoAnts site! We're an tool for helping on play the game \"The Ants: Underground Kingdom\". \n\t\t\t\tCheck out the links below to get started</label> \n\t\t\t<a routerLink=\"/colony-actions\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-calendar\" aria-hidden=\"true\"><span>Colony Action Event Schedule</span></h2>\n\t\t\t\t<p>See all Colony Action Events of Week </p>\n\t\t\t</a>\n\t\t\t<a routerLink=\"/tables\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-list\" aria-hidden=\"true\"><span>Information Tables</span></h2>\n\t\t\t\t<p>See a list with some tables that contain useful information on the game</p>\n\t\t\t</a>\n\t\t\t<!--a routerLink=\"/plunder-calculator\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-leaf\" aria-hidden=\"true\"><span>Plunder Calculator [BETA]</span></h2>\n\t\t\t\t<p>Simulate the amount of resources plundered in attacks</p>\n\t\t\t</a-->\n\t\t\t<a routerLink=\"/contribute\" class=\"button\">\n\t\t\t\t<h2 class=\"glyphicon glyphicon-heart\" aria-hidden=\"true\"><span>Contribute</span></h2>\n\t\t\t\t<p>Help us grow!</p>\n\t\t\t</a>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -895,7 +911,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav navbar-nav\">\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/colony-actions\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tColony Actions Table\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/special-ant-exp\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tSpecial Ants Exp Table\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/contribute\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tContribute\n\t\t</a>\n\t</li>\n\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tLinks\n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tAdministração \n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<li>\n\t\t\t\t\t<a routerLink=\"/users\">\n\t\t\t\t\t\tUsuários\n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t&nbsp;\n</ul>"
+module.exports = "<ul class=\"nav navbar-nav\">\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/colony-actions\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tColony Actions\n\t\t</a>\n\t</li>\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/tables\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tInformation Tables\n\t\t</a>\n\t</li>\n\t<!--li class=\"dropdown\">\n\t\t<a routerLink=\"/plunder-calculator\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tPlunder Calculator [BETA]\n\t\t</a>\n\t</li-->\n\t<li class=\"dropdown\">\n\t\t<a routerLink=\"/contribute\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\tContribute\n\t\t</a>\n\t</li>\n\t<ng-container *ngIf=\"permissao && permissao != 'INATIVO'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tLinks\n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<ng-container *ngIf=\"permissao == 'USUARIO' || permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara User\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container *ngIf=\"permissao == 'ADMINISTRADOR'\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a routerLink=\"/\">\n\t\t\t\t\t\t\tPara Admin\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\t\t\t\t\t\t\t\t\n\t\t\t\t</ng-container>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t<ng-container *ngIf=\"permissao && permissao == 'ADMINISTRADOR'\">\n\t\t<li class=\"dropdown\">\n\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" v-pre>\n\t\t\t\tAdministração \n\t\t\t</a>\n\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t<li>\n\t\t\t\t\t<a routerLink=\"/users\">\n\t\t\t\t\t\tUsuários\n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</li>\n\t</ng-container>\n\t&nbsp;\n</ul>"
 
 /***/ }),
 
@@ -1076,6 +1092,296 @@ var PainelComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/plunder/classe.ts":
+/*!***********************************!*\
+  !*** ./src/app/plunder/classe.ts ***!
+  \***********************************/
+/*! exports provided: Classe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Classe", function() { return Classe; });
+var Classe;
+(function (Classe) {
+    Classe["CULTIVATOR"] = "CULTIVATOR";
+    Classe["RAIDER"] = "RAIDER";
+    Classe["HERDER"] = "HERDER";
+})(Classe || (Classe = {}));
+
+
+/***/ }),
+
+/***/ "./src/app/plunder/plunder-result.ts":
+/*!*******************************************!*\
+  !*** ./src/app/plunder/plunder-result.ts ***!
+  \*******************************************/
+/*! exports provided: PlunderResult */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlunderResult", function() { return PlunderResult; });
+var PlunderResult = /** @class */ (function () {
+    function PlunderResult(meat, plant, soil, sand, honeydew) {
+        if (typeof meat == "number") {
+            this.meat = meat;
+            this.plant = plant;
+            this.soil = soil;
+            this.sand = sand;
+            this.honeydew = honeydew ? honeydew : 0;
+        }
+        else {
+            this.meat = parseInt(meat['meat']);
+            this.plant = parseInt(meat['plant']);
+            this.soil = parseInt(meat['soil']);
+            this.sand = parseInt(meat['sand']);
+            this.honeydew = meat['honeydew'] ? parseInt(meat['honeydew']) : 0;
+        }
+    }
+    PlunderResult.generate = function () {
+        return new PlunderResult(0, 0, 0, 0, 0);
+    };
+    PlunderResult.prototype.clone = function () {
+        return new PlunderResult(this.meat, this.plant, this.soil, this.sand, this.honeydew);
+    };
+    return PlunderResult;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/plunder/plunder.component.html":
+/*!************************************************!*\
+  !*** ./src/app/plunder/plunder.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-default\">\n\t<div class=\"panel-heading\">Plunder Calculator [BETA]</div>\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t<div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\" style=\"margin: auto;\">\n\t\t\t\t\t\t<label for=\"classeAtk\" class=\"form-label\">Attacking Class:</label>\n\t\t\t\t\t\t<select id=\"classeAtk\" [(ngModel)]=\"plunder.classeAtk\" class=\"form-control\">\n\t\t\t\t\t\t\t<option [value]=\"null\"> -- Select -- </option>\n\t\t\t\t\t\t\t<option *ngFor=\"let classe of classes\" [value]=\"classe\">{{classe}}</option>\n\t\t\t\t\t\t</select>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<p></p>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\" style=\"margin: auto;\">\n\t\t\t\t\t\t<label for=\"classeDef\" class=\"form-label\">Defending Class:</label>\n\t\t\t\t\t\t<select id=\"classeDef\" [(ngModel)]=\"plunder.classeDef\" class=\"form-control\">\n\t\t\t\t\t\t\t<option [value]=\"null\"> -- Select -- </option>\n\t\t\t\t\t\t\t<option *ngFor=\"let classe of classes\" [value]=\"classe\">{{classe}}</option>\n\t\t\t\t\t\t</select>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<p></p>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\" style=\"margin: auto;\">\n\t\t\t\t\t\t<label for=\"diffLevel\" class=\"form-label\">Level Difference:</label>\n\t\t\t\t\t\t<select id=\"diffLevel\" [(ngModel)]=\"plunder.diffLevel\" class=\"form-control\">\n\t\t\t\t\t\t\t<option [value]=\"0\"> -- Select -- </option>\n\t\t\t\t\t\t\t<option [value]=\"2\">&le; 2</option>\n\t\t\t\t\t\t\t<option [value]=\"3\">= 3</option>\n\t\t\t\t\t\t\t<option [value]=\"4\">= 4</option>\n\t\t\t\t\t\t\t<option [value]=\"5\">= 5</option>\n\t\t\t\t\t\t\t<option [value]=\"6\">&ge; 6</option>\n\t\t\t\t\t\t</select>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<p></p>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\" style=\"margin: auto;\">\n\t\t\t\t\t\t<label for=\"carga\" class=\"form-label\">Storage Capacity of March Unit:</label>\n\t\t\t\t\t\t<input type=\"number\" class=\"form-control\" id=\"carga\" [(ngModel)]=\"plunder.carga\"\n\t\t\t\t\t\t\tplaceholder=\"00000000\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<p></p>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\" style=\"margin: auto;\">\n\t\t\t\t\t\t<label for=\"scout-check\" class=\"form-label\">Scout?</label>\n\t\t\t\t\t\t<input id=\"scout-check\" [(ngModel)]=\"plunder.hasScout\" style=\"margin-left: 10px;\" type=\"checkbox\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<p></p>\n\t\t\t\t<div *ngIf=\"plunder.hasScout\" style=\"overflow-x: auto;\">\n\t\t\t\t\t<table class=\"table\">\n\t\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t\t<col width=\"115px\" />\n\t\t\t\t\t\t\t<col width=\"115px\" />\n\t\t\t\t\t\t\t<col width=\"115px\" />\n\t\t\t\t\t\t\t<col width=\"115px\" />\n\t\t\t\t\t\t\t<col width=\"130px\" *ngIf=\"honeydewEnable\" />\n\t\t\t\t\t\t</colgroup>\n\t\t\t\t\t\t<thead class=\"thead-light\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<th>SC. MEAT</th>\n\t\t\t\t\t\t\t\t<th>SC. PLANT</th>\n\t\t\t\t\t\t\t\t<th>SC. WET SOIL</th>\n\t\t\t\t\t\t\t\t<th>SC. SAND</th>\n\t\t\t\t\t\t\t\t<th *ngIf=\"honeydewEnable\">SC. HONEYDEW</th>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<td><input type=\"number\" class=\"form-control\" [(ngModel)]=\"plunder.scoutMeat\"\n\t\t\t\t\t\t\t\t\t\tplaceholder=\"00000000\"></td>\n\t\t\t\t\t\t\t\t<td><input type=\"number\" class=\"form-control\" [(ngModel)]=\"plunder.scoutPlant\"\n\t\t\t\t\t\t\t\t\t\tplaceholder=\"00000000\"></td>\n\t\t\t\t\t\t\t\t<td><input type=\"number\" class=\"form-control\" [(ngModel)]=\"plunder.scoutSoil\"\n\t\t\t\t\t\t\t\t\t\tplaceholder=\"00000000\"></td>\n\t\t\t\t\t\t\t\t<td><input type=\"number\" class=\"form-control\" [(ngModel)]=\"plunder.scoutSand\"\n\t\t\t\t\t\t\t\t\t\tplaceholder=\"00000000\"></td>\n\t\t\t\t\t\t\t\t<td *ngIf=\"honeydewEnable\"><input type=\"number\" class=\"form-control\"\n\t\t\t\t\t\t\t\t\t\t[(ngModel)]=\"plunder.scoutHoneydew\" placeholder=\"00000000\"></td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</tbody>\n\t\t\t\t\t</table>\n\t\t\t\t\t<p></p>\n\t\t\t\t</div>\n\t\t\t\t<div style=\"text-align: center;\">\n\t\t\t\t\t<button style=\"width: 150px;\" class=\"btn\" [ngClass]=\"{'btn-success': isValid() == '', 'btn-danger': isValid() != ''}\" (click)=\"calcPlunder()\">Calculate</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<p></p>\n\t\t\t<div *ngIf=\"plunderResults.length\">\n\t\t\t\t<label class=\"form-label\">Plunder Result:</label>\n\t\t\t\t<table class=\"table\" style=\"table-layout: auto;\">\n\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t<col />\n\t\t\t\t\t\t<col />\n\t\t\t\t\t\t<col />\n\t\t\t\t\t\t<col />\n\t\t\t\t\t\t<col *ngIf=\"honeydewEnable\" />\n\t\t\t\t\t</colgroup>\n\t\t\t\t\t<thead class=\"thead-light\">\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<th>MEAT</th>\n\t\t\t\t\t\t\t<th>PLANT</th>\n\t\t\t\t\t\t\t<th>WET SOIL</th>\n\t\t\t\t\t\t\t<th>SAND</th>\n\t\t\t\t\t\t\t<th *ngIf=\"honeydewEnable\">HONEYDEW</th>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr *ngFor=\"let pr of plunderResults\">\n\t\t\t\t\t\t\t<td>{{pr.meat}}</td>\n\t\t\t\t\t\t\t<td>{{pr.plant}}</td>\n\t\t\t\t\t\t\t<td>{{pr.soil}}</td>\n\t\t\t\t\t\t\t<td>{{pr.sand}}</td>\n\t\t\t\t\t\t\t<td *ngIf=\"honeydewEnable\">{{pr.honeydew}}</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\n\t\t</div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/plunder/plunder.component.less":
+/*!************************************************!*\
+  !*** ./src/app/plunder/plunder.component.less ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BsdW5kZXIvcGx1bmRlci5jb21wb25lbnQubGVzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/plunder/plunder.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/plunder/plunder.component.ts ***!
+  \**********************************************/
+/*! exports provided: PlunderComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlunderComponent", function() { return PlunderComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _abstract_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../abstract-component */ "./src/app/abstract-component.ts");
+/* harmony import */ var _classe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./classe */ "./src/app/plunder/classe.ts");
+/* harmony import */ var _plunder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./plunder */ "./src/app/plunder/plunder.ts");
+/* harmony import */ var _plunder_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./plunder.service */ "./src/app/plunder/plunder.service.ts");
+
+
+
+
+
+
+var PlunderComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](PlunderComponent, _super);
+    function PlunderComponent(plunderService) {
+        var _this = _super.call(this) || this;
+        _this.plunderService = plunderService;
+        _this.plunder = _plunder__WEBPACK_IMPORTED_MODULE_4__["Plunder"].generate();
+        _this.honeydewEnable = false;
+        return _this;
+    }
+    Object.defineProperty(PlunderComponent.prototype, "classes", {
+        get: function () {
+            return [_classe__WEBPACK_IMPORTED_MODULE_3__["Classe"].CULTIVATOR, _classe__WEBPACK_IMPORTED_MODULE_3__["Classe"].RAIDER, _classe__WEBPACK_IMPORTED_MODULE_3__["Classe"].HERDER];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(PlunderComponent.prototype, "plunderResults", {
+        get: function () {
+            return this.plunderService.plunderResults;
+        },
+        set: function (plunderResults) {
+            this.plunderService.plunderResults = plunderResults;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    PlunderComponent.prototype.calcPlunder = function () {
+        var isValid = this.isValid();
+        if (isValid != "") {
+            alert("Fill in the following fields:" + isValid);
+            return;
+        }
+        this.plunderService.calcPlunder(this.plunder)
+            .then(function (r) {
+            console.log(r);
+        })
+            .catch(function (r) {
+            console.log(r);
+        });
+    };
+    PlunderComponent.prototype.isValid = function () {
+        var ret = "";
+        if (!this.plunder.classeAtk)
+            ret += "\n- Attacking Class";
+        if (!this.plunder.classeDef)
+            ret += "\n- Defending Class";
+        if (!this.plunder.diffLevel)
+            ret += "\n- Level Difference";
+        if (!this.plunder.carga)
+            ret += "\n- Storage Capacity of March Unit";
+        if (this.plunder.hasScout && this.plunder.scoutMeat === null)
+            ret += "\n- Sc. Meat";
+        if (this.plunder.hasScout && this.plunder.scoutPlant === null)
+            ret += "\n- Sc. Plant";
+        if (this.plunder.hasScout && this.plunder.scoutSoil === null)
+            ret += "\n- Sc. Wet Soil";
+        if (this.plunder.hasScout && this.plunder.scoutSand === null)
+            ret += "\n- Sc. Sand";
+        if (this.honeydewEnable && this.plunder.hasScout && this.plunder.scoutHoneydew === null)
+            ret += "\n- Sc. Honeydew";
+        return ret;
+    };
+    PlunderComponent.prototype.resetaCampos = function () {
+        this.plunder = _plunder__WEBPACK_IMPORTED_MODULE_4__["Plunder"].generate();
+        this.plunder.carga = null;
+        this.plunder.scoutMeat = null;
+        this.plunder.scoutPlant = null;
+        this.plunder.scoutSoil = null;
+        this.plunder.scoutSand = null;
+        this.plunder.scoutHoneydew = null;
+        this.plunderResults = [];
+    };
+    PlunderComponent.prototype.ngOnInit = function () {
+        this.resetaCampos();
+    };
+    PlunderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-plunder',
+            template: __webpack_require__(/*! ./plunder.component.html */ "./src/app/plunder/plunder.component.html"),
+            styles: [__webpack_require__(/*! ./plunder.component.less */ "./src/app/plunder/plunder.component.less")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_plunder_service__WEBPACK_IMPORTED_MODULE_5__["PlunderService"]])
+    ], PlunderComponent);
+    return PlunderComponent;
+}(_abstract_component__WEBPACK_IMPORTED_MODULE_2__["AbstractComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/plunder/plunder.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/plunder/plunder.service.ts ***!
+  \********************************************/
+/*! exports provided: PlunderService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlunderService", function() { return PlunderService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _plunder_result__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plunder-result */ "./src/app/plunder/plunder-result.ts");
+
+
+
+
+var PlunderService = /** @class */ (function () {
+    function PlunderService(http) {
+        this.http = http;
+        this.plunderResults = [];
+    }
+    PlunderService.prototype.calcPlunder = function (p) {
+        var _this = this;
+        return this.http.post('/plunder-calculator', p).toPromise()
+            .then(function (r) {
+            var arr = r.json();
+            _this.plunderResults = [];
+            for (var i = 0; i < arr.length; i++) {
+                _this.plunderResults.push(new _plunder_result__WEBPACK_IMPORTED_MODULE_3__["PlunderResult"](arr[i]));
+            }
+            return _this.plunderResults;
+        });
+    };
+    PlunderService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"]])
+    ], PlunderService);
+    return PlunderService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/plunder/plunder.ts":
+/*!************************************!*\
+  !*** ./src/app/plunder/plunder.ts ***!
+  \************************************/
+/*! exports provided: Plunder */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Plunder", function() { return Plunder; });
+var Plunder = /** @class */ (function () {
+    function Plunder(classeAtk, classeDef, diffLevel, carga, hasScout, scoutMeat, scoutPlant, scoutSoil, scoutSand, scoutHoneydew) {
+        if (typeof classeAtk == "object" && classeAtk != null) {
+            this.classeAtk = classeAtk['classeAtk'];
+            this.classeDef = classeAtk['classeDef'];
+            this.diffLevel = parseInt(classeAtk['diffLevel']);
+            this.carga = parseInt(classeAtk['carga']);
+            this.hasScout = classeAtk['hasScout'] ? classeAtk['hasScout'] : false;
+            this.scoutMeat = parseInt(classeAtk['scoutMeat']);
+            this.scoutPlant = parseInt(classeAtk['scoutPlant']);
+            this.scoutSoil = parseInt(classeAtk['scoutSoil']);
+            this.scoutSand = parseInt(classeAtk['scoutSand']);
+            this.scoutHoneydew = parseInt(classeAtk['scoutHoneydew']);
+        }
+        else {
+            this.classeAtk = classeAtk;
+            this.classeDef = classeDef;
+            this.diffLevel = diffLevel;
+            this.carga = carga;
+            this.hasScout = hasScout;
+            this.scoutMeat = scoutMeat;
+            this.scoutPlant = scoutPlant;
+            this.scoutSoil = scoutSoil;
+            this.scoutSand = scoutSand;
+            this.scoutHoneydew = scoutHoneydew ? scoutHoneydew : 0;
+        }
+    }
+    Plunder.generate = function () {
+        return new Plunder(null, null, 0, 0, false, 0, 0, 0, 0);
+    };
+    Plunder.prototype.clone = function () {
+        return new Plunder(this.classeAtk, this.classeDef, this.diffLevel, this.carga, this.hasScout, this.scoutMeat, this.scoutPlant, this.scoutSoil, this.scoutSand);
+    };
+    return Plunder;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/redimensionar.directive.ts":
 /*!********************************************!*\
   !*** ./src/app/redimensionar.directive.ts ***!
@@ -1167,32 +1473,32 @@ var Redimensionavel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/special-ant-exp/special-ant-exp.component.html":
-/*!****************************************************************!*\
-  !*** ./src/app/special-ant-exp/special-ant-exp.component.html ***!
-  \****************************************************************/
+/***/ "./src/app/tables/special-ant-exp/special-ant-exp.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/tables/special-ant-exp/special-ant-exp.component.html ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\n\t<div class=\"panel-heading\">Special Ant Exp Table</div>\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t\n\t\t\t<div>\n\t\t\t\t<div style=\"overflow-x: auto;\">\n\t\t\t\t\t<table class=\"table\" data-toggle=\"table\" style=\"table-layout: auto;\">\n\t\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t</colgroup>\n\t\t\t\t\t\t<thead class=\"thead-light\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<th>LVL</th>\n\t\t\t\t\t\t\t\t<th title=\"XP\">XP</th>\n\t\t\t\t\t\t\t\t<th title=\"TOTAL XP\">TOTAL XP</th>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t<tr *ngFor=\"let xp of specialAntExpTable\">\n\t\t\t\t\t\t\t\t<td>{{xp.id}} &gt;&gt; {{xp.id+1}} </td>\n\t\t\t\t\t\t\t\t<td>{{xp.xp}}</td>\n\t\t\t\t\t\t\t\t<td>{{xp.xp_total}}</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</tbody>\n\t\t\t\t\t</table>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<div class=\"panel panel-default\">\n\t<!--div class=\"panel-heading\">Special Ant Exp Table</div-->\n\t<div class=\"row\" style=\"margin-right: 0px; margin-left: 0px;\">\n\t\t<div style=\"width: 100%; padding: 10px; border-right: 1px solid #ddd\">\n\t\t\t\n\t\t\t<div>\n\t\t\t\t<div style=\"overflow-x: auto;\">\n\t\t\t\t\t<table class=\"table\" data-toggle=\"table\" style=\"table-layout: auto;\">\n\t\t\t\t\t\t<colgroup>\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t\t<col />\n\t\t\t\t\t\t</colgroup>\n\t\t\t\t\t\t<thead class=\"thead-light\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<th>LVL</th>\n\t\t\t\t\t\t\t\t<th title=\"XP\">XP</th>\n\t\t\t\t\t\t\t\t<th title=\"TOTAL XP\">TOTAL XP</th>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t<tr *ngFor=\"let xp of specialAntExpTable\">\n\t\t\t\t\t\t\t\t<td>{{xp.id}} &gt;&gt; {{xp.id+1}} </td>\n\t\t\t\t\t\t\t\t<td>{{xp.xp}}</td>\n\t\t\t\t\t\t\t\t<td>{{xp.xp_total}}</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</tbody>\n\t\t\t\t\t</table>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t</div>\n</div>\n<p></p>\n<div>\n\t<label class=\"table-infos\" style=\"float: right; padding: 5px;\">© [PYM]RubensM S37, [PYM]Arthor S37</label>\n</div>"
 
 /***/ }),
 
-/***/ "./src/app/special-ant-exp/special-ant-exp.component.less":
-/*!****************************************************************!*\
-  !*** ./src/app/special-ant-exp/special-ant-exp.component.less ***!
-  \****************************************************************/
+/***/ "./src/app/tables/special-ant-exp/special-ant-exp.component.less":
+/*!***********************************************************************!*\
+  !*** ./src/app/tables/special-ant-exp/special-ant-exp.component.less ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NwZWNpYWwtYW50LWV4cC9zcGVjaWFsLWFudC1leHAuY29tcG9uZW50Lmxlc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RhYmxlcy9zcGVjaWFsLWFudC1leHAvc3BlY2lhbC1hbnQtZXhwLmNvbXBvbmVudC5sZXNzIn0= */"
 
 /***/ }),
 
-/***/ "./src/app/special-ant-exp/special-ant-exp.component.ts":
-/*!**************************************************************!*\
-  !*** ./src/app/special-ant-exp/special-ant-exp.component.ts ***!
-  \**************************************************************/
+/***/ "./src/app/tables/special-ant-exp/special-ant-exp.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/tables/special-ant-exp/special-ant-exp.component.ts ***!
+  \*********************************************************************/
 /*! exports provided: SpecialAntExpComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1201,7 +1507,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpecialAntExpComponent", function() { return SpecialAntExpComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _special_ant_exp_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./special-ant-exp.service */ "./src/app/special-ant-exp/special-ant-exp.service.ts");
+/* harmony import */ var _special_ant_exp_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./special-ant-exp.service */ "./src/app/tables/special-ant-exp/special-ant-exp.service.ts");
 
 
 
@@ -1221,8 +1527,8 @@ var SpecialAntExpComponent = /** @class */ (function () {
     SpecialAntExpComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-special-ant-exp',
-            template: __webpack_require__(/*! ./special-ant-exp.component.html */ "./src/app/special-ant-exp/special-ant-exp.component.html"),
-            styles: [__webpack_require__(/*! ./special-ant-exp.component.less */ "./src/app/special-ant-exp/special-ant-exp.component.less")]
+            template: __webpack_require__(/*! ./special-ant-exp.component.html */ "./src/app/tables/special-ant-exp/special-ant-exp.component.html"),
+            styles: [__webpack_require__(/*! ./special-ant-exp.component.less */ "./src/app/tables/special-ant-exp/special-ant-exp.component.less")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_2__["SpecialAntExpService"]])
     ], SpecialAntExpComponent);
@@ -1233,10 +1539,10 @@ var SpecialAntExpComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/special-ant-exp/special-ant-exp.service.ts":
-/*!************************************************************!*\
-  !*** ./src/app/special-ant-exp/special-ant-exp.service.ts ***!
-  \************************************************************/
+/***/ "./src/app/tables/special-ant-exp/special-ant-exp.service.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/tables/special-ant-exp/special-ant-exp.service.ts ***!
+  \*******************************************************************/
 /*! exports provided: SpecialAntExpService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1245,7 +1551,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpecialAntExpService", function() { return SpecialAntExpService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./special-ant-exp */ "./src/app/special-ant-exp/special-ant-exp.ts");
+/* harmony import */ var _special_ant_exp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./special-ant-exp */ "./src/app/tables/special-ant-exp/special-ant-exp.ts");
 
 
 
@@ -1314,10 +1620,10 @@ var SpecialAntExpService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/special-ant-exp/special-ant-exp.ts":
-/*!****************************************************!*\
-  !*** ./src/app/special-ant-exp/special-ant-exp.ts ***!
-  \****************************************************/
+/***/ "./src/app/tables/special-ant-exp/special-ant-exp.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/tables/special-ant-exp/special-ant-exp.ts ***!
+  \***********************************************************/
 /*! exports provided: SpecialAntExp */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1344,6 +1650,192 @@ var SpecialAntExp = /** @class */ (function () {
         return new SpecialAntExp(this.id, this.xp, this.xp_total);
     };
     return SpecialAntExp;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/tables/t9-creature-remains/t9-creature-remains.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/app/tables/t9-creature-remains/t9-creature-remains.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"display: flex;\" dir=\"ltr\">\n\t<div style=\"width: 160px; overflow-x: scroll;\">\n\t\t<table class=\"table table-bordered\" cellspacing=\"0\" cellpadding=\"0\"\n\t\t\tstyle=\"table-layout: auto; white-space: nowrap;\">\n\t\t\t<thead class=\"thead-light\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th class=\"s3\"><span>Reserarch levels</span></th>\n\t\t\t\t</tr>\n\t\t\t</thead>\n\t\t\t<tbody>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Precision Hatch</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Precision Mutation</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Ripping Crush</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Carrier Ant Mutation III</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Field Battle</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Sturdy Body</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>T-9 Carrier Ant</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5 total\">TOTAL</td>\n\t\t\t\t</tr>\n\t\t\t</tbody>\n\t\t</table>\n\t</div>\n\n\t<div style=\"overflow-x: scroll; width: calc(100% - 160px);\">\n\t\t<table class=\"table table-bordered\" style=\"table-layout: auto; white-space: nowrap;\">\n\t\t\t<thead class=\"thead-light\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th class=\"s3\">1</th>\n\t\t\t\t\t<th class=\"s3\">2</th>\n\t\t\t\t\t<th class=\"s3\">3</th>\n\t\t\t\t\t<th class=\"s3\">4</th>\n\t\t\t\t\t<th class=\"s3\">5</th>\n\t\t\t\t\t<th class=\"s3\">6</th>\n\t\t\t\t\t<th class=\"s3\">7</th>\n\t\t\t\t\t<th class=\"s3\">8</th>\n\t\t\t\t\t<th class=\"s3\">9</th>\n\t\t\t\t\t<th class=\"s3\">10</th>\n\t\t\t\t\t<th class=\"s3\">11</th>\n\t\t\t\t\t<th class=\"s3\">12</th>\n\t\t\t\t\t<th class=\"s3\">13</th>\n\t\t\t\t\t<th class=\"s3\">14</th>\n\t\t\t\t\t<th class=\"s3\">15</th>\n\t\t\t\t\t<th class=\"s3\">16</th>\n\t\t\t\t\t<th class=\"s3\">17</th>\n\t\t\t\t\t<th class=\"s3\">18</th>\n\t\t\t\t\t<th class=\"s3\">19</th>\n\t\t\t\t\t<th class=\"s3\">20</th>\n\t\t\t\t\t<th class=\"s3\"><span>Min Sum</span></th>\n\t\t\t\t\t<th class=\"s3\"><span>Sum</span></th>\n\t\t\t\t</tr>\n\t\t\t</thead>\n\t\t\t<tbody>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">180</td>\n\t\t\t\t\t<td class=\"s3 min\">190</td>\n\t\t\t\t\t<td class=\"s3 min\">200</td>\n\t\t\t\t\t<td class=\"s3 min\">210</td>\n\t\t\t\t\t<td class=\"s3 min\">230</td>\n\t\t\t\t\t<td class=\"s3 min\">250</td>\n\t\t\t\t\t<td class=\"s3 min\">280</td>\n\t\t\t\t\t<td class=\"s3 min\">330</td>\n\t\t\t\t\t<td class=\"s3 min\">400</td>\n\t\t\t\t\t<td class=\"s3 min\">480</td>\n\t\t\t\t\t<td class=\"s3\">620</td>\n\t\t\t\t\t<td class=\"s3\">810</td>\n\t\t\t\t\t<td class=\"s3\">1050</td>\n\t\t\t\t\t<td class=\"s3\">1470</td>\n\t\t\t\t\t<td class=\"s3\">2060</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">2750</td>\n\t\t\t\t\t<td class=\"s3\">8760</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">180</td>\n\t\t\t\t\t<td class=\"s3 min\">190</td>\n\t\t\t\t\t<td class=\"s3 min\">200</td>\n\t\t\t\t\t<td class=\"s3 min\">210</td>\n\t\t\t\t\t<td class=\"s3 min\">230</td>\n\t\t\t\t\t<td class=\"s3 min\">250</td>\n\t\t\t\t\t<td class=\"s3 min\">280</td>\n\t\t\t\t\t<td class=\"s3 min\">330</td>\n\t\t\t\t\t<td class=\"s3 min\">400</td>\n\t\t\t\t\t<td class=\"s3 min\">480</td>\n\t\t\t\t\t<td class=\"s3\">620</td>\n\t\t\t\t\t<td class=\"s3\">810</td>\n\t\t\t\t\t<td class=\"s3\">1050</td>\n\t\t\t\t\t<td class=\"s3\">1470</td>\n\t\t\t\t\t<td class=\"s3\">2060</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">2750</td>\n\t\t\t\t\t<td class=\"s3\">8760</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">180</td>\n\t\t\t\t\t<td class=\"s3 min\">220</td>\n\t\t\t\t\t<td class=\"s3 min\">260</td>\n\t\t\t\t\t<td class=\"s3\">340</td>\n\t\t\t\t\t<td class=\"s3\">450</td>\n\t\t\t\t\t<td class=\"s3\">640</td>\n\t\t\t\t\t<td class=\"s3\">940</td>\n\t\t\t\t\t<td class=\"s3\">1500</td>\n\t\t\t\t\t<td class=\"s3\">2550</td>\n\t\t\t\t\t<td class=\"s3\">4590</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">660</td>\n\t\t\t\t\t<td class=\"s3\">11670</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">0</td>\n\t\t\t\t\t<td class=\"s3\">0</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">600</td>\n\t\t\t\t\t<td class=\"s3 min\">630</td>\n\t\t\t\t\t<td class=\"s3 min\">660</td>\n\t\t\t\t\t<td class=\"s3 min\">690</td>\n\t\t\t\t\t<td class=\"s3 min\">730</td>\n\t\t\t\t\t<td class=\"s3 min\">800</td>\n\t\t\t\t\t<td class=\"s3 min\">880</td>\n\t\t\t\t\t<td class=\"s3 min\">970</td>\n\t\t\t\t\t<td class=\"s3 min\">1060</td>\n\t\t\t\t\t<td class=\"s3 min\">1170</td>\n\t\t\t\t\t<td class=\"s3 min\">1290</td>\n\t\t\t\t\t<td class=\"s3 min\">1540</td>\n\t\t\t\t\t<td class=\"s3 min\">1850</td>\n\t\t\t\t\t<td class=\"s3 min\">2220</td>\n\t\t\t\t\t<td class=\"s3 min\">2670</td>\n\t\t\t\t\t<td class=\"s3 min\">3200</td>\n\t\t\t\t\t<td class=\"s3 min\">4160</td>\n\t\t\t\t\t<td class=\"s3 min\">5410</td>\n\t\t\t\t\t<td class=\"s3 min\">7030</td>\n\t\t\t\t\t<td class=\"s3 min\">9140</td>\n\t\t\t\t\t<td class=\"s3 min\">46700</td>\n\t\t\t\t\t<td class=\"s3\">46700</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">600</td>\n\t\t\t\t\t<td class=\"s3 min\">630</td>\n\t\t\t\t\t<td class=\"s3 min\">660</td>\n\t\t\t\t\t<td class=\"s3 min\">690</td>\n\t\t\t\t\t<td class=\"s3 min\">730</td>\n\t\t\t\t\t<td class=\"s3 min\">800</td>\n\t\t\t\t\t<td class=\"s3 min\">880</td>\n\t\t\t\t\t<td class=\"s3 min\">970</td>\n\t\t\t\t\t<td class=\"s3 min\">1060</td>\n\t\t\t\t\t<td class=\"s3 min\">1170</td>\n\t\t\t\t\t<td class=\"s3 min\">1290</td>\n\t\t\t\t\t<td class=\"s3 min\">1540</td>\n\t\t\t\t\t<td class=\"s3 min\">1850</td>\n\t\t\t\t\t<td class=\"s3 min\">2220</td>\n\t\t\t\t\t<td class=\"s3 min\">2670</td>\n\t\t\t\t\t<td class=\"s3 min\">3200</td>\n\t\t\t\t\t<td class=\"s3 min\">4160</td>\n\t\t\t\t\t<td class=\"s3 min\">5410</td>\n\t\t\t\t\t<td class=\"s3 min\">7030</td>\n\t\t\t\t\t<td class=\"s3 min\">9140</td>\n\t\t\t\t\t<td class=\"s3 min\">46700</td>\n\t\t\t\t\t<td class=\"s3\">46700</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">17500</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">17500</td>\n\t\t\t\t\t<td class=\"s3\">17500</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 total\" colspan=\"20\"></td>\n\t\t\t\t\t<td class=\"s3 total\">117060</td>\n\t\t\t\t\t<td class=\"s3 total\">140090</td>\n\t\t\t\t</tr>\n\t\t\t</tbody>\n\t\t</table>\n\t</div>\n\t\n\n</div>\n<p></p>\n<div>\n\t<label class=\"table-infos min\">Follow yellow path to unlock T9 asap</label>\n\t<label class=\"table-infos\">* Same requirements for Shooters and Guardians</label>\n\t<label class=\"table-infos\" style=\"float: right; padding: 5px;\">© [OTL]Grinch S102</label>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/tables/t9-creature-remains/t9-creature-remains.component.less":
+/*!*******************************************************************************!*\
+  !*** ./src/app/tables/t9-creature-remains/t9-creature-remains.component.less ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RhYmxlcy90OS1jcmVhdHVyZS1yZW1haW5zL3Q5LWNyZWF0dXJlLXJlbWFpbnMuY29tcG9uZW50Lmxlc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/tables/t9-creature-remains/t9-creature-remains.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/tables/t9-creature-remains/t9-creature-remains.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: T9CreatureRemainsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T9CreatureRemainsComponent", function() { return T9CreatureRemainsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var T9CreatureRemainsComponent = /** @class */ (function () {
+    function T9CreatureRemainsComponent() {
+    }
+    T9CreatureRemainsComponent.prototype.ngOnInit = function () {
+    };
+    T9CreatureRemainsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-t9-creature-remains',
+            template: __webpack_require__(/*! ./t9-creature-remains.component.html */ "./src/app/tables/t9-creature-remains/t9-creature-remains.component.html"),
+            styles: [__webpack_require__(/*! ./t9-creature-remains.component.less */ "./src/app/tables/t9-creature-remains/t9-creature-remains.component.less")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], T9CreatureRemainsComponent);
+    return T9CreatureRemainsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/tables/tables.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/tables/tables.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"accordion\">\n\t<div class=\"card\">\n\t\t<div id=\"collapse0\" class=\"collapse\" [ngClass]=\"{show : showLegend }\" >\n\t\t\t<div class=\"card-body\">\n\t\t\t\tSelect and see one of the options below:\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"card\">\n\t\t<div class=\"card-header\" title=\"See the list off all necessary Exp for leveling special ants\" style=\"cursor: pointer;\" id=\"heading1\" data-toggle=\"collapse\" data-target=\"#collapse1\" aria-expanded=\"true\" aria-controls=\"collapse1\">\n\t\t\t#1 Special Ant Exp Table\n\t\t</div>\n\t\t<div id=\"collapse1\" class=\"collapse\" aria-labelledby=\"heading1\" data-parent=\"#accordion\">\n\t\t\t<div class=\"card-body\">\n\t\t\t\t<app-special-ant-exp></app-special-ant-exp>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"card\">\n\t\t<div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading2\" data-toggle=\"collapse\" data-target=\"#collapse2\" aria-expanded=\"true\" aria-controls=\"collapse2\">\n\t\t\t#2 Zone Develop Creature Remains\n\t\t</div>\n\t\t<div id=\"collapse2\" class=\"collapse\" aria-labelledby=\"heading2\" data-parent=\"#accordion\" aria-expanded=\"false\">\n\t\t\t<div class=\"card-body\">\n\t\t\t\t<app-zone-develop-creature-remains></app-zone-develop-creature-remains>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"card\">\n\t\t<div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading3\" data-toggle=\"collapse\" data-target=\"#collapse3\" aria-expanded=\"true\" aria-controls=\"collapse3\">\n\t\t\t#3 T9 Carrier Ant* Evolution Research Creature Remains\n\t\t</div>\n\t\t<div id=\"collapse3\" class=\"collapse\" aria-labelledby=\"heading3\" data-parent=\"#accordion\" aria-expanded=\"false\">\n\t\t\t<div class=\"card-body\">\n\t\t\t\t<app-t9-creature-remains></app-t9-creature-remains>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n\n\n"
+
+/***/ }),
+
+/***/ "./src/app/tables/tables.component.less":
+/*!**********************************************!*\
+  !*** ./src/app/tables/tables.component.less ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RhYmxlcy90YWJsZXMuY29tcG9uZW50Lmxlc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/tables/tables.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/tables/tables.component.ts ***!
+  \********************************************/
+/*! exports provided: TablesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TablesComponent", function() { return TablesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var TablesComponent = /** @class */ (function () {
+    function TablesComponent() {
+        this.showLegend = true;
+    }
+    TablesComponent.prototype.hideAll = function () {
+        jQuery('#accordion .collapse').collapse("hide");
+    };
+    TablesComponent.prototype.testShowLegend = function () {
+        var showLegend = true;
+        jQuery(".collapse.in").each(function (i, e) {
+            showLegend = false;
+        });
+        this.showLegend = showLegend;
+    };
+    TablesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        jQuery(".card-header").click(function () {
+            _this.hideAll();
+            setTimeout(function () {
+                _this.testShowLegend();
+            }, 380);
+        });
+    };
+    TablesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-tables',
+            template: __webpack_require__(/*! ./tables.component.html */ "./src/app/tables/tables.component.html"),
+            styles: [__webpack_require__(/*! ./tables.component.less */ "./src/app/tables/tables.component.less")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], TablesComponent);
+    return TablesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.html":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.html ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"display: flex;\" dir=\"ltr\">\n\t<div style=\"width: 140px; overflow-x: scroll;\">\n\t\t<table class=\"table table-bordered\" cellspacing=\"0\" cellpadding=\"0\"\n\t\t\tstyle=\"table-layout: auto; white-space: nowrap;\">\n\t\t\t<thead class=\"thead-light\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th class=\"s3\"><span>Reserarch levels</span></th>\n\t\t\t\t</tr>\n\t\t\t</thead>\n\t\t\t<tbody>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Zone Gatherer</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Extra Resource</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Secondary rewards</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Points Bonus I\t</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Pack Light</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Rapid Hatch</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Zone Transporter</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Mixed Meduim</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Tertriary Rewards</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Gathering points</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Hunting Points</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Building Points</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Spore Points</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Evolving Points</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Exp Points</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Defeating Points</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Hatching Points</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Points Bonus II</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5\"><span>Double Rewards</span></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s5 total\">TOTAL</td>\n\t\t\t\t</tr>\n\t\t\t</tbody>\n\t\t</table>\n\t</div>\n\t<div style=\"overflow-x: scroll; width: calc(100% - 140px);\">\n\t\t<table class=\"table table-bordered\" style=\"table-layout: auto; white-space: nowrap;\">\n\t\t\t<thead class=\"thead-light\">\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<th class=\"s3\">1</th>\n\t\t\t\t\t<th class=\"s3\">2</th>\n\t\t\t\t\t<th class=\"s3\">3</th>\n\t\t\t\t\t<th class=\"s3\">4</th>\n\t\t\t\t\t<th class=\"s3\">5</th>\n\t\t\t\t\t<th class=\"s3\">6</th>\n\t\t\t\t\t<th class=\"s3\">7</th>\n\t\t\t\t\t<th class=\"s3\">8</th>\n\t\t\t\t\t<th class=\"s3\">9</th>\n\t\t\t\t\t<th class=\"s3\">10</th>\n\t\t\t\t\t<th class=\"s3\">11</th>\n\t\t\t\t\t<th class=\"s3\">12</th>\n\t\t\t\t\t<th class=\"s3\">13</th>\n\t\t\t\t\t<th class=\"s3\">14</th>\n\t\t\t\t\t<th class=\"s3\">15</th>\n\t\t\t\t\t<th class=\"s3\" dir=\"ltr\">16</th>\n\t\t\t\t\t<th class=\"s3\">17</th>\n\t\t\t\t\t<th class=\"s3\">18</th>\n\t\t\t\t\t<th class=\"s3\">19</th>\n\t\t\t\t\t<th class=\"s3\">20</th>\n\t\t\t\t\t<th class=\"s3\"><span>Min Sum</span></th>\n\t\t\t\t\t<th class=\"s3\" dir=\"ltr\">Total Sum</th>\n\t\t\t\t</tr>\n\t\t\t</thead>\n\t\t\t<tbody>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">70</td>\n\t\t\t\t\t<td class=\"s3 min\">70</td>\n\t\t\t\t\t<td class=\"s3 min\">90</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3 min\">170</td>\n\t\t\t\t\t<td class=\"s3 min\">230</td>\n\t\t\t\t\t<td class=\"s3 min\">350</td>\n\t\t\t\t\t<td class=\"s3 min\">530</td>\n\t\t\t\t\t<td class=\"s3 min\">790</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">2540</td>\n\t\t\t\t\t<td class=\"s3\">2540</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">70</td>\n\t\t\t\t\t<td class=\"s3 min\">70</td>\n\t\t\t\t\t<td class=\"s3 min\">90</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3 min\">170</td>\n\t\t\t\t\t<td class=\"s3 min\">230</td>\n\t\t\t\t\t<td class=\"s3 min\">350</td>\n\t\t\t\t\t<td class=\"s3 min\">530</td>\n\t\t\t\t\t<td class=\"s3 min\">790</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3\"></td>\n\t\t\t\t\t<td class=\"s3\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">2540</td>\n\t\t\t\t\t<td class=\"s3\">2540</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">1190</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">1190</td>\n\t\t\t\t\t<td class=\"s3\">1190</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">90</td>\n\t\t\t\t\t<td class=\"s3 min\">100</td>\n\t\t\t\t\t<td class=\"s3 min\">120</td>\n\t\t\t\t\t<td class=\"s3 min\">140</td>\n\t\t\t\t\t<td class=\"s3 min\">170</td>\n\t\t\t\t\t<td class=\"s3 min\">220</td>\n\t\t\t\t\t<td class=\"s3 min\">310</td>\n\t\t\t\t\t<td class=\"s3 min\">470</td>\n\t\t\t\t\t<td class=\"s3 min\">700</td>\n\t\t\t\t\t<td class=\"s3 min\">1060</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">3380</td>\n\t\t\t\t\t<td class=\"s3\">3380</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">170</td>\n\t\t\t\t\t<td class=\"s3 min\">180</td>\n\t\t\t\t\t<td class=\"s3 min\">200</td>\n\t\t\t\t\t<td class=\"s3\">220</td>\n\t\t\t\t\t<td class=\"s3\">240</td>\n\t\t\t\t\t<td class=\"s3\">290</td>\n\t\t\t\t\t<td class=\"s3\">350</td>\n\t\t\t\t\t<td class=\"s3\">420</td>\n\t\t\t\t\t<td class=\"s3\">540</td>\n\t\t\t\t\t<td class=\"s3\">700</td>\n\t\t\t\t\t<td class=\"s3\">920</td>\n\t\t\t\t\t<td class=\"s3\">1280</td>\n\t\t\t\t\t<td class=\"s3\">1790</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">870</td>\n\t\t\t\t\t<td class=\"s3\">7620</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">170</td>\n\t\t\t\t\t<td class=\"s3 min\">180</td>\n\t\t\t\t\t<td class=\"s3 min\">200</td>\n\t\t\t\t\t<td class=\"s3\">220</td>\n\t\t\t\t\t<td class=\"s3\">240</td>\n\t\t\t\t\t<td class=\"s3\">290</td>\n\t\t\t\t\t<td class=\"s3\">350</td>\n\t\t\t\t\t<td class=\"s3\">420</td>\n\t\t\t\t\t<td class=\"s3\">540</td>\n\t\t\t\t\t<td class=\"s3\">700</td>\n\t\t\t\t\t<td class=\"s3\">920</td>\n\t\t\t\t\t<td class=\"s3\">1280</td>\n\t\t\t\t\t<td class=\"s3\">1790</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">870</td>\n\t\t\t\t\t<td class=\"s3\">7620</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">170</td>\n\t\t\t\t\t<td class=\"s3 min\">180</td>\n\t\t\t\t\t<td class=\"s3 min\">200</td>\n\t\t\t\t\t<td class=\"s3 min\">220</td>\n\t\t\t\t\t<td class=\"s3 min\">240</td>\n\t\t\t\t\t<td class=\"s3 min\">290</td>\n\t\t\t\t\t<td class=\"s3 min\">350</td>\n\t\t\t\t\t<td class=\"s3 min\">420</td>\n\t\t\t\t\t<td class=\"s3 min\">540</td>\n\t\t\t\t\t<td class=\"s3 min\">700</td>\n\t\t\t\t\t<td class=\"s3 min\">920</td>\n\t\t\t\t\t<td class=\"s3 min\">1280</td>\n\t\t\t\t\t<td class=\"s3 min\">1790</td>\n\t\t\t\t\t<td class=\"s3\"></td>\n\t\t\t\t\t<td class=\"s3\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">7620</td>\n\t\t\t\t\t<td class=\"s3\">7620</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">170</td>\n\t\t\t\t\t<td class=\"s3 min\">180</td>\n\t\t\t\t\t<td class=\"s3 min\">200</td>\n\t\t\t\t\t<td class=\"s3 min\">220</td>\n\t\t\t\t\t<td class=\"s3 min\">240</td>\n\t\t\t\t\t<td class=\"s3 min\">290</td>\n\t\t\t\t\t<td class=\"s3 min\">350</td>\n\t\t\t\t\t<td class=\"s3 min\">420</td>\n\t\t\t\t\t<td class=\"s3 min\">540</td>\n\t\t\t\t\t<td class=\"s3 min\">700</td>\n\t\t\t\t\t<td class=\"s3 min\">920</td>\n\t\t\t\t\t<td class=\"s3 min\">1280</td>\n\t\t\t\t\t<td class=\"s3 min\">1790</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">7620</td>\n\t\t\t\t\t<td class=\"s3\">7620</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">1350</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">1350</td>\n\t\t\t\t\t<td class=\"s3\">1350</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">100</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">120</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3\">150</td>\n\t\t\t\t\t<td class=\"s3\">160</td>\n\t\t\t\t\t<td class=\"s3\">190</td>\n\t\t\t\t\t<td class=\"s3\">230</td>\n\t\t\t\t\t<td class=\"s3\">280</td>\n\t\t\t\t\t<td class=\"s3\">360</td>\n\t\t\t\t\t<td class=\"s3\">470</td>\n\t\t\t\t\t<td class=\"s3\">610</td>\n\t\t\t\t\t<td class=\"s3\">850</td>\n\t\t\t\t\t<td class=\"s3\">1200</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">570</td>\n\t\t\t\t\t<td class=\"s3\">5070</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">100</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">120</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3\">150</td>\n\t\t\t\t\t<td class=\"s3\">160</td>\n\t\t\t\t\t<td class=\"s3\">190</td>\n\t\t\t\t\t<td class=\"s3\">230</td>\n\t\t\t\t\t<td class=\"s3\">280</td>\n\t\t\t\t\t<td class=\"s3\">360</td>\n\t\t\t\t\t<td class=\"s3\">470</td>\n\t\t\t\t\t<td class=\"s3\">610</td>\n\t\t\t\t\t<td class=\"s3\">850</td>\n\t\t\t\t\t<td class=\"s3\">1200</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">570</td>\n\t\t\t\t\t<td class=\"s3\">5070</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">100</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">120</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3\">150</td>\n\t\t\t\t\t<td class=\"s3\">160</td>\n\t\t\t\t\t<td class=\"s3\">190</td>\n\t\t\t\t\t<td class=\"s3\">230</td>\n\t\t\t\t\t<td class=\"s3\">280</td>\n\t\t\t\t\t<td class=\"s3\">360</td>\n\t\t\t\t\t<td class=\"s3\">470</td>\n\t\t\t\t\t<td class=\"s3\">610</td>\n\t\t\t\t\t<td class=\"s3\">850</td>\n\t\t\t\t\t<td class=\"s3\">1200</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">570</td>\n\t\t\t\t\t<td class=\"s3\">5070</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">100</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">120</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3\">150</td>\n\t\t\t\t\t<td class=\"s3\">160</td>\n\t\t\t\t\t<td class=\"s3\">190</td>\n\t\t\t\t\t<td class=\"s3\">230</td>\n\t\t\t\t\t<td class=\"s3\">280</td>\n\t\t\t\t\t<td class=\"s3\">360</td>\n\t\t\t\t\t<td class=\"s3\">470</td>\n\t\t\t\t\t<td class=\"s3\">610</td>\n\t\t\t\t\t<td class=\"s3\">850</td>\n\t\t\t\t\t<td class=\"s3\">1200</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">570</td>\n\t\t\t\t\t<td class=\"s3\">5070</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">100</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">120</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3\">150</td>\n\t\t\t\t\t<td class=\"s3\">160</td>\n\t\t\t\t\t<td class=\"s3\">190</td>\n\t\t\t\t\t<td class=\"s3\">230</td>\n\t\t\t\t\t<td class=\"s3\">280</td>\n\t\t\t\t\t<td class=\"s3\">360</td>\n\t\t\t\t\t<td class=\"s3\">470</td>\n\t\t\t\t\t<td class=\"s3\">610</td>\n\t\t\t\t\t<td class=\"s3\">850</td>\n\t\t\t\t\t<td class=\"s3\">1200</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">570</td>\n\t\t\t\t\t<td class=\"s3\">5070</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">40</td>\n\t\t\t\t\t<td class=\"s3 min\">40</td>\n\t\t\t\t\t<td class=\"s3 min\">40</td>\n\t\t\t\t\t<td class=\"s3 min\">50</td>\n\t\t\t\t\t<td class=\"s3 min\">60</td>\n\t\t\t\t\t<td class=\"s3\">70</td>\n\t\t\t\t\t<td class=\"s3\">100</td>\n\t\t\t\t\t<td class=\"s3\">130</td>\n\t\t\t\t\t<td class=\"s3\">180</td>\n\t\t\t\t\t<td class=\"s3\">250</td>\n\t\t\t\t\t<td class=\"s3\">340</td>\n\t\t\t\t\t<td class=\"s3\">520</td>\n\t\t\t\t\t<td class=\"s3\">770</td>\n\t\t\t\t\t<td class=\"s3\">1080</td>\n\t\t\t\t\t<td class=\"s3\">1410</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">230</td>\n\t\t\t\t\t<td class=\"s3\">5080</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">100</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">120</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3 min\">150</td>\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">190</td>\n\t\t\t\t\t<td class=\"s3 min\">230</td>\n\t\t\t\t\t<td class=\"s3 min\">280</td>\n\t\t\t\t\t<td class=\"s3\">360</td>\n\t\t\t\t\t<td class=\"s3\">470</td>\n\t\t\t\t\t<td class=\"s3\">610</td>\n\t\t\t\t\t<td class=\"s3\">850</td>\n\t\t\t\t\t<td class=\"s3\">1200</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">1580</td>\n\t\t\t\t\t<td class=\"s3\">5070</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">100</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">110</td>\n\t\t\t\t\t<td class=\"s3 min\">120</td>\n\t\t\t\t\t<td class=\"s3 min\">130</td>\n\t\t\t\t\t<td class=\"s3 min\">150</td>\n\t\t\t\t\t<td class=\"s3 min\">160</td>\n\t\t\t\t\t<td class=\"s3 min\">190</td>\n\t\t\t\t\t<td class=\"s3 min\">230</td>\n\t\t\t\t\t<td class=\"s3 min\">280</td>\n\t\t\t\t\t<td class=\"s3\">360</td>\n\t\t\t\t\t<td class=\"s3\">470</td>\n\t\t\t\t\t<td class=\"s3\">610</td>\n\t\t\t\t\t<td class=\"s3\">850</td>\n\t\t\t\t\t<td class=\"s3\">1200</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">1580</td>\n\t\t\t\t\t<td class=\"s3\">5070</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 19px\">\n\t\t\t\t\t<td class=\"s3 min\">260</td>\n\t\t\t\t\t<td class=\"s3 min\">270</td>\n\t\t\t\t\t<td class=\"s3 min\">290</td>\n\t\t\t\t\t<td class=\"s3 min\">300</td>\n\t\t\t\t\t<td class=\"s3 min\">320</td>\n\t\t\t\t\t<td class=\"s3 min\">350</td>\n\t\t\t\t\t<td class=\"s3 min\">380</td>\n\t\t\t\t\t<td class=\"s3 min\">420</td>\n\t\t\t\t\t<td class=\"s3 min\">460</td>\n\t\t\t\t\t<td class=\"s3 min\">510</td>\n\t\t\t\t\t<td class=\"s3 min\">560</td>\n\t\t\t\t\t<td class=\"s3 min\">670</td>\n\t\t\t\t\t<td class=\"s3 min\">810</td>\n\t\t\t\t\t<td class=\"s3 min\">970</td>\n\t\t\t\t\t<td class=\"s3 min\">1160</td>\n\t\t\t\t\t<td class=\"s3 min\">1390</td>\n\t\t\t\t\t<td class=\"s3 min\">1810</td>\n\t\t\t\t\t<td class=\"s3 min\">2350</td>\n\t\t\t\t\t<td class=\"s3 min\">3060</td>\n\t\t\t\t\t<td class=\"s3 min\">3980</td>\n\t\t\t\t\t<td class=\"s3 min\">20320</td>\n\t\t\t\t\t<td class=\"s3\">20320</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 20px\">\n\t\t\t\t\t<td class=\"s3 min\">2540</td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s4\"></td>\n\t\t\t\t\t<td class=\"s3 min\">2540</td>\n\t\t\t\t\t<td class=\"s3\">2540</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr style=\"height: 20px\">\n\t\t\t\t\t<td class=\"s3 total\" colspan=\"20\"></td>\n\t\t\t\t\t<td class=\"s3 total\">57080</td>\n\t\t\t\t\t<td class=\"s3 total\">104910</td>\n\t\t\t\t</tr>\n\t\t\t</tbody>\n\t\t</table>\n\t</div>\n\t\n</div>\n<p></p>\n<div>\n\t<label class=\"min table-infos\">Follow yellow path to unlock Double rewards asap</label>\n\t<label class=\"table-infos\" style=\"float: right; padding: 5px;\">© [OTL]Grinch S102</label>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.less":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.less ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RhYmxlcy96b25lLWRldmVsb3AtY3JlYXR1cmUtcmVtYWlucy96b25lLWRldmVsb3AtY3JlYXR1cmUtcmVtYWlucy5jb21wb25lbnQubGVzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.ts":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.ts ***!
+  \*************************************************************************************************/
+/*! exports provided: ZoneDevelopCreatureRemainsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZoneDevelopCreatureRemainsComponent", function() { return ZoneDevelopCreatureRemainsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ZoneDevelopCreatureRemainsComponent = /** @class */ (function () {
+    function ZoneDevelopCreatureRemainsComponent() {
+    }
+    ZoneDevelopCreatureRemainsComponent.prototype.ngOnInit = function () {
+    };
+    ZoneDevelopCreatureRemainsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-zone-develop-creature-remains',
+            template: __webpack_require__(/*! ./zone-develop-creature-remains.component.html */ "./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.html"),
+            styles: [__webpack_require__(/*! ./zone-develop-creature-remains.component.less */ "./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.less")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ZoneDevelopCreatureRemainsComponent);
+    return ZoneDevelopCreatureRemainsComponent;
 }());
 
 

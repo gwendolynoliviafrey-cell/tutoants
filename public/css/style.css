@@ -293,6 +293,27 @@ button.botao-reduzido span, a.botao-reduzido span {
     }
 }
 
+td.s3 {
+    text-align: right;
+}
+th.s3 {
+    text-align: center;
+}
+td.s3.min {
+    background-color: #fff7e4;
+}
+label.table-infos {
+    padding: 5px;
+}
+label.table-infos.min {
+    background-color: #fff7e4;
+    border: solid 1px #dddddd;
+}
+td.s3.total, td.s5.total {
+    background-color: #dcae86;
+    font-weight: bold;
+}
+
 input[type='number'].input-number-sem-spin {
     -moz-appearance:textfield;
 }
