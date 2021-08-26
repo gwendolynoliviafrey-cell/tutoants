@@ -12,7 +12,7 @@ class Plunder
     const CLASSE_RAIDER = "RAIDER";
     const CLASSE_HERDER = "HERDER";
 
-    const FATOR_CARGA_REAL = 7/11;
+    const FATOR_CARGA_REAL = 7/11 * 0.99;
     const PESO_MEAT = 1.4;
     const PESO_PLANT = 1.4;
     const PESO_SOIL = 2.1;
@@ -75,13 +75,13 @@ class Plunder
         }
         if ($this->classeAtk == self::CLASSE_RAIDER) {
             if ($this->classeDef == self::CLASSE_CULTIVATOR) {
-                return 200;
+                return 146.15;
             }
             if ($this->classeDef == self::CLASSE_RAIDER) {
-                return 200;
+                return 146.15;
             }
             if ($this->classeDef == self::CLASSE_HERDER) {
-                return 290;
+                return 292.252525;
             }
         }
         if ($this->classeAtk == self::CLASSE_HERDER) {

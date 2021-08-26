@@ -27,7 +27,7 @@
 
     @yield('innerhead')
 
-    <link href="{{ asset('css/style-1.2.0.css')  }}" rel="stylesheet"/>
+    <link href="{{ asset('css/style-1.3.0.css')  }}" rel="stylesheet"/>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="/js/gtag.js"></script>
@@ -41,7 +41,7 @@
 
     @inject('resources', 'App\Services\ResourcesService')
 </head>
-<body>
+<body style="background-image: url(/img/fundo-home.png); background-size: cover; background-position: center;">
     <div id="hiddens">
         <input type="hidden" id="hidden-app-name" name="app-name" value="{{ config('app.name') }}">
         <input type="hidden" id="hidden-permissao" name="permissao" value="{{ $resources->permissao }}">
@@ -54,8 +54,37 @@
             <input type="hidden" id="hidden-username" name="username" value="{{ Auth::user()->name }}">
         @endguest
     </div>
-
-    @yield('content')
+    <div style="display: none; position: absolute; background-image: url(/img/fundo-home.png); background-size: cover; background-position: center; width: 100%; height: 100%;"></div>
+    <div style="height: 100px; 
+        width: 100%; 
+        background-image: url(/img/cabecalho-repeat.png);
+        position: absolute;
+        background-repeat-x: repeat;
+        background-repeat-y: no-repeat;">
+    </div>
+    <div style="height: 100px; 
+        width: 100%; 
+        background-image: url(/img/cabecalho.png);
+        position: absolute;
+        background-repeat: no-repeat;">
+    </div>
+    <div style="height: 100px; 
+        width: 100%; 
+        margin: 2px 0px 0px -10px;
+        background-image: url(/img/logo-ants.png);
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;">
+    </div>
+    <div style="height: 100%; background-image: url(/img/rodape-repeat.png);  background-repeat-x: repeat; background-repeat-y: no-repeat; background-position-y: bottom;">
+        <div style="height: 100%; background-image: url(/img/rodape.png); background-repeat: no-repeat; background-position-y: bottom;">
+            <div style="height: calc(100% - 32px);" >
+                @yield('content')
+            </div>
+        </div>
+    </div>
+    
 
     <form id="logout-form" action="/logout" method="POST" style="display: none;">
         {{ csrf_field() }}
