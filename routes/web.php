@@ -40,6 +40,7 @@ Route::get(     '/painel',                       [UsersController::class,       
 */
 
 Route::get(     '/colony-actions',               [ColonyActionsController::class,   'index'                         ]);
+Route::get(     '/colony-actions/list',          [ColonyActionsController::class,   'getColonyActionsList'          ]);
 
 Route::get(     '/tables',                       [TablesController::class,          'index'                         ]);
 //Route::get(     '/tables/special-ant-exp',       [TablesController::class,          'index'                         ]);

@@ -207,6 +207,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tables_special_ant_exp_special_ant_exp_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./tables/special-ant-exp/special-ant-exp.service */ "./src/app/tables/special-ant-exp/special-ant-exp.service.ts");
 /* harmony import */ var _tables_zone_develop_creature_remains_zone_develop_creature_remains_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./tables/zone-develop-creature-remains/zone-develop-creature-remains.component */ "./src/app/tables/zone-develop-creature-remains/zone-develop-creature-remains.component.ts");
 /* harmony import */ var _tables_t9_creature_remains_t9_creature_remains_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./tables/t9-creature-remains/t9-creature-remains.component */ "./src/app/tables/t9-creature-remains/t9-creature-remains.component.ts");
+/* harmony import */ var _upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./upgrades/upgrades.component */ "./src/app/upgrades/upgrades.component.ts");
+
 
 
 
@@ -271,6 +273,7 @@ var AppModule = /** @class */ (function () {
                 _tables_tables_component__WEBPACK_IMPORTED_MODULE_24__["TablesComponent"],
                 _tables_zone_develop_creature_remains_zone_develop_creature_remains_component__WEBPACK_IMPORTED_MODULE_27__["ZoneDevelopCreatureRemainsComponent"],
                 _tables_t9_creature_remains_t9_creature_remains_component__WEBPACK_IMPORTED_MODULE_28__["T9CreatureRemainsComponent"],
+                _upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_29__["UpgradesComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -384,6 +387,13 @@ var ColonyAction = /** @class */ (function () {
     ColonyAction.generate = function () {
         return new ColonyAction(0, "", 0, 0);
     };
+    ColonyAction.convertList = function (arr) {
+        var list = [];
+        for (var i in arr) {
+            list.push(new ColonyAction(arr[i]));
+        }
+        return list;
+    };
     ColonyAction.prototype.clone = function () {
         return new ColonyAction(this.id, this.descricao, this.dia_semana_id, this.sequencial);
     };
@@ -491,12 +501,23 @@ var ColonyActionsComponent = /** @class */ (function (_super) {
         var end = new Date(this.TIME_NOW.getTime() + this.LOCAL_TIMEZONE_OFFSET + (sequencial * this.TIMESTAMP_PLUS) + this.TIME_59);
         return new Date().getTime() >= start.getTime() && new Date().getTime() <= end.getTime();
     };
-    ColonyActionsComponent.prototype.ngOnInit = function () {
-        this.timezoneOffset = this.LOCAL_TIMEZONE_OFFSET;
-        this.selecionaTimezone();
+    ColonyActionsComponent.prototype.posInicializa = function () {
         this.editavel = true;
         this.diaSelecionadoId = this.getDiaIdAtual();
         this.selecionaDia();
+    };
+    ColonyActionsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.timezoneOffset = this.LOCAL_TIMEZONE_OFFSET;
+        this.selecionaTimezone();
+        this.colonyActionsService.getColonyActionsList()
+            .then(function (r) {
+            _this.posInicializa();
+        })
+            .catch(function (r) {
+            alert("Failed to get the Colony Actions list");
+            var erro = _this.erroHttp(r);
+        });
     };
     ColonyActionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -525,88 +546,100 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColonyActionsService", function() { return ColonyActionsService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _array_indexador__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../array-indexador */ "./src/app/array-indexador.ts");
-/* harmony import */ var _colony_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colony-action */ "./src/app/colony-actions/colony-action.ts");
-/* harmony import */ var _dia_semana__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dia-semana */ "./src/app/colony-actions/dia-semana.ts");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _array_indexador__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../array-indexador */ "./src/app/array-indexador.ts");
+/* harmony import */ var _colony_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colony-action */ "./src/app/colony-actions/colony-action.ts");
+/* harmony import */ var _dia_semana__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dia-semana */ "./src/app/colony-actions/dia-semana.ts");
+
 
 
 
 
 
 var ColonyActionsService = /** @class */ (function () {
-    function ColonyActionsService() {
+    function ColonyActionsService(http) {
+        this.http = http;
         this.dias = [
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](1, "Monday", "Gather Resource"),
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](2, "Tuesday", "Upgrade Building"),
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](3, "Wednesday", "Research Evolution"),
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](4, "Thursday", "Strengthen Special Ant"),
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](5, "Friday", "Hatch Soldier"),
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](6, "Saturday", "Free Development"),
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_4__["DiaSemana"](7, "Sunday", "Warzone Expedition")
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](1, "Monday", "Gather Resource"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](2, "Tuesday", "Upgrade Building"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](3, "Wednesday", "Research Evolution"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](4, "Thursday", "Strengthen Special Ant"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](5, "Friday", "Hatch Soldier"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](6, "Saturday", "Free Development"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](7, "Sunday", "Warzone Expedition")
         ];
         this.colonyActions = [
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](1, "Building + Building Speedup", 1, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](2, "Building", 1, 1),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](3, "Hatching Speedup", 1, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](4, "Building + Hatching Troops", 1, 3),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](5, "Building Speedup + Evolution Speedup + Hatching Speedup", 1, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](6, "Building + Evolution + Hatching Speedup", 1, 5),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](7, "Building + Evolution + Hatching Troops", 1, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](8, "Building", 1, 7),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](9, "Building", 2, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](10, "Evolution + Evolution Speedups", 2, 1),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](11, "Building", 2, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](12, "Use Any Speedup", 2, 3),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](13, "Building + Evolution", 2, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](14, "Building + Building Speedup", 2, 5),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](15, "Building + Evolution + Hatching Troops", 2, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](16, "Building + Evolution + Hatching Troops", 2, 7),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](17, "Building + Building Speedup", 3, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](18, "Evolution + Evolution Speedup + Creature Remains", 3, 1),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](19, "Hatching Speedup", 3, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](20, "Building + Evolution + Creature Remains", 3, 3),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](21, "Building + Hatching Troops", 3, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](22, "Building Speedup + Evolution Speedup + Hatching Speedup + Creature Remains", 3, 5),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](23, "Building + Evolution + Hatching Speedup", 3, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](24, "Building Speedup + Evolution Speedup + Hatching Speedup + Creature Remains", 3, 7),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](25, "Building + Building Speedup", 4, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](26, "All Special Ant Development", 4, 1),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](27, "Building Speedup + Evolution Speedup + Hatching Speedup", 4, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](28, "All Special Ant Development", 4, 3),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](29, "Use Any Speedup", 4, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](30, "All Special Ant Development", 4, 5),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](31, "Building + Evolution + Hatching Speedup", 4, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](32, "All Special Ant Development", 4, 7),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](33, "Use Any Speedup", 5, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](34, "Building Speedup + Evolution Speedup + Hatching Speedup", 5, 1),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](35, "Building + Evolution + Hatching Speedup", 5, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](36, "Hatching Speedup", 5, 3),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](37, "Building + Evolution + Hatching Speedup", 5, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](38, "Building + Hatching Troops", 5, 5),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](39, "Evolution + Hatching Troops", 5, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](40, "Use Any Speedup", 5, 7),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](41, "Use Any Speedup", 6, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](42, "Evolution + Evolution Speedup", 6, 1),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](43, "Building + Building Speedup", 6, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](44, "Use Hatching Speedup", 6, 3),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](45, "Building + Evolution + Hatching Speedup", 6, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](46, "Building + Evolution + Hatching Speedup", 6, 5),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](47, "Building + Hatching Troops", 6, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](48, "Evolution + Hatching Troops", 6, 7),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](49, "Building + Building Speedup", 7, 0),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](50, "All Insect Development + Use Any Speedup", 7, 1),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](51, "Building + Evolution + Hatching Speedup", 7, 2),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](52, "All Insect Development + Evolution + Evolution Speedup", 7, 3),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](53, "Use Any Speedup", 7, 4),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](54, "All Insect Development + Hatching Speedup", 7, 5),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](55, "Building + Evolution + Hatching Speedup", 7, 6),
-            new _colony_action__WEBPACK_IMPORTED_MODULE_3__["ColonyAction"](56, "All Insect Development + Use Any Speedup", 7, 7),
+        /*new ColonyAction(1,"Building + Building Speedup",1,0),
+        new ColonyAction(2,"Building",1,1),
+        new ColonyAction(3,"Hatching Speedup",1,2),
+        new ColonyAction(4,"Building + Hatching Troops",1,3),
+        new ColonyAction(5,"Building Speedup + Evolution Speedup + Hatching Speedup",1,4),
+        new ColonyAction(6,"Building + Evolution + Hatching Speedup",1,5),
+        new ColonyAction(7,"Building + Evolution + Hatching Troops",1,6),
+        new ColonyAction(8,"Building",1,7),
+        new ColonyAction(9,"Building",2,0),
+        new ColonyAction(10,"Evolution + Evolution Speedups",2,1),
+        new ColonyAction(11,"Building",2,2),
+        new ColonyAction(12,"Use Any Speedup",2,3),
+        new ColonyAction(13,"Building + Evolution",2,4),
+        new ColonyAction(14,"Building + Building Speedup",2,5),
+        new ColonyAction(15,"Building + Evolution + Hatching Troops",2,6),
+        new ColonyAction(16,"Building + Evolution + Hatching Troops",2,7),
+        new ColonyAction(17,"Building + Building Speedup",3,0),
+        new ColonyAction(18,"Evolution + Evolution Speedup + Creature Remains",3,1),
+        new ColonyAction(19,"Hatching Speedup",3,2),
+        new ColonyAction(20,"Building + Evolution + Creature Remains",3,3),
+        new ColonyAction(21,"Building + Hatching Troops",3,4),
+        new ColonyAction(22,"Building Speedup + Evolution Speedup + Hatching Speedup + Creature Remains",3,5),
+        new ColonyAction(23,"Building + Evolution + Hatching Speedup",3,6),
+        new ColonyAction(24,"Building Speedup + Evolution Speedup + Hatching Speedup + Creature Remains",3,7),
+        new ColonyAction(25,"Building + Building Speedup",4,0),
+        new ColonyAction(26,"All Special Ant Development",4,1),
+        new ColonyAction(27,"Building Speedup + Evolution Speedup + Hatching Speedup",4,2),
+        new ColonyAction(28,"All Special Ant Development",4,3),
+        new ColonyAction(29,"Use Any Speedup",4,4),
+        new ColonyAction(30,"All Special Ant Development",4,5),
+        new ColonyAction(31,"Building + Evolution + Hatching Speedup",4,6),
+        new ColonyAction(32,"All Special Ant Development",4,7),
+        new ColonyAction(33,"Use Any Speedup",5,0),
+        new ColonyAction(34,"Building Speedup + Evolution Speedup + Hatching Speedup",5,1),
+        new ColonyAction(35,"Building + Evolution + Hatching Speedup",5,2),
+        new ColonyAction(36,"Hatching Speedup",5,3),
+        new ColonyAction(37,"Building + Evolution + Hatching Speedup",5,4),
+        new ColonyAction(38,"Building + Hatching Troops",5,5),
+        new ColonyAction(39,"Evolution + Hatching Troops",5,6),
+        new ColonyAction(40,"Use Any Speedup",5,7),
+        new ColonyAction(41,"Use Any Speedup",6,0),
+        new ColonyAction(42,"Evolution + Evolution Speedup",6,1),
+        new ColonyAction(43,"Building + Building Speedup",6,2),
+        new ColonyAction(44,"Use Hatching Speedup",6,3),
+        new ColonyAction(45,"Building + Evolution + Hatching Speedup",6,4),
+        new ColonyAction(46,"Building + Evolution + Hatching Speedup",6,5),
+        new ColonyAction(47,"Building + Hatching Troops",6,6),
+        new ColonyAction(48,"Evolution + Hatching Troops",6,7),
+        new ColonyAction(49,"Building + Building Speedup",7,0),
+        new ColonyAction(50,"All Insect Development + Use Any Speedup",7,1),
+        new ColonyAction(51,"Building + Evolution + Hatching Speedup",7,2),
+        new ColonyAction(52,"All Insect Development + Evolution + Evolution Speedup",7,3),
+        new ColonyAction(53,"Use Any Speedup",7,4),
+        new ColonyAction(54,"All Insect Development + Hatching Speedup",7,5),
+        new ColonyAction(55,"Building + Evolution + Hatching Speedup",7,6),
+        new ColonyAction(56,"All Insect Development + Use Any Speedup",7,7),*/
         ];
         this.diasIndex = null;
-        this.obtemDias();
     }
+    ColonyActionsService.prototype.getColonyActionsList = function () {
+        var _this = this;
+        return this.http.get("/colony-actions/list")
+            .toPromise()
+            .then(function (response) {
+            _this.colonyActions = _colony_action__WEBPACK_IMPORTED_MODULE_4__["ColonyAction"].convertList(response.json());
+            _this.obtemDias();
+            return _this.colonyActions;
+        });
+    };
     ColonyActionsService.prototype.obtemDias = function () {
-        this.diasIndex = new _array_indexador__WEBPACK_IMPORTED_MODULE_2__["ArrayIndexador"](this.dias);
+        this.diasIndex = new _array_indexador__WEBPACK_IMPORTED_MODULE_3__["ArrayIndexador"](this.dias);
         for (var i = 0; i < this.colonyActions.length; i++) {
             var ca = this.colonyActions[i];
             var di = this.diasIndex.get(ca.dia_semana_id);
@@ -615,14 +648,14 @@ var ColonyActionsService = /** @class */ (function () {
                     di.colonyActionsIndex.add(ca);
                 }
                 else {
-                    di.colonyActionsIndex = new _array_indexador__WEBPACK_IMPORTED_MODULE_2__["ArrayIndexador"]([ca], 'sequencial');
+                    di.colonyActionsIndex = new _array_indexador__WEBPACK_IMPORTED_MODULE_3__["ArrayIndexador"]([ca], 'sequencial');
                 }
             }
         }
     };
     ColonyActionsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"]])
     ], ColonyActionsService);
     return ColonyActionsService;
 }());
@@ -1373,7 +1406,7 @@ var Plunder = /** @class */ (function () {
         return new Plunder(null, null, 0, 0, false, 0, 0, 0, 0);
     };
     Plunder.prototype.clone = function () {
-        return new Plunder(this.classeAtk, this.classeDef, this.diffLevel, this.carga, this.hasScout, this.scoutMeat, this.scoutPlant, this.scoutSoil, this.scoutSand);
+        return new Plunder(this.classeAtk, this.classeDef, this.diffLevel, this.carga, this.hasScout, this.scoutMeat, this.scoutPlant, this.scoutSoil, this.scoutSand, this.scoutHoneydew);
     };
     return Plunder;
 }());
@@ -1719,7 +1752,7 @@ var T9CreatureRemainsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"accordion\">\n\t<div class=\"card\">\n\t\t<div id=\"collapse0\" class=\"collapse\" [ngClass]=\"{show : showLegend }\" >\n\t\t\t<div class=\"card-body\">\n\t\t\t\tSelect and see one of the options below:\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"card\">\n\t\t<div class=\"card-header\" title=\"See the list off all necessary Exp for leveling special ants\" style=\"cursor: pointer;\" id=\"heading1\" data-toggle=\"collapse\" data-target=\"#collapse1\" aria-expanded=\"true\" aria-controls=\"collapse1\">\n\t\t\t#1 Special Ant Exp Table\n\t\t</div>\n\t\t<div id=\"collapse1\" class=\"collapse\" aria-labelledby=\"heading1\" data-parent=\"#accordion\">\n\t\t\t<div class=\"card-body\">\n\t\t\t\t<app-special-ant-exp></app-special-ant-exp>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"card\">\n\t\t<div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading2\" data-toggle=\"collapse\" data-target=\"#collapse2\" aria-expanded=\"true\" aria-controls=\"collapse2\">\n\t\t\t#2 Zone Develop Creature Remains\n\t\t</div>\n\t\t<div id=\"collapse2\" class=\"collapse\" aria-labelledby=\"heading2\" data-parent=\"#accordion\" aria-expanded=\"false\">\n\t\t\t<div class=\"card-body\">\n\t\t\t\t<app-zone-develop-creature-remains></app-zone-develop-creature-remains>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"card\">\n\t\t<div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading3\" data-toggle=\"collapse\" data-target=\"#collapse3\" aria-expanded=\"true\" aria-controls=\"collapse3\">\n\t\t\t#3 T9 Carrier Ant* Evolution Research Creature Remains\n\t\t</div>\n\t\t<div id=\"collapse3\" class=\"collapse\" aria-labelledby=\"heading3\" data-parent=\"#accordion\" aria-expanded=\"false\">\n\t\t\t<div class=\"card-body\">\n\t\t\t\t<app-t9-creature-remains></app-t9-creature-remains>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n\n\n"
+module.exports = "<div id=\"accordion\">\n    <div class=\"card\">\n        <div id=\"collapse0\" class=\"collapse\" [ngClass]=\"{show : showLegend }\">\n            <div class=\"card-body\">\n                Select and see one of the options below:\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" title=\"See the list off all necessary Exp for leveling special ants\" style=\"cursor: pointer;\" id=\"heading1\" data-toggle=\"collapse\" data-target=\"#collapse1\" aria-expanded=\"true\" aria-controls=\"collapse1\">\n            #1 Special Ant Exp Table\n        </div>\n        <div id=\"collapse1\" class=\"collapse\" aria-labelledby=\"heading1\" data-parent=\"#accordion\">\n            <div class=\"card-body\">\n                <app-special-ant-exp></app-special-ant-exp>\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading2\" data-toggle=\"collapse\" data-target=\"#collapse2\" aria-expanded=\"true\" aria-controls=\"collapse2\">\n            #2 Zone Develop Creature Remains\n        </div>\n        <div id=\"collapse2\" class=\"collapse\" aria-labelledby=\"heading2\" data-parent=\"#accordion\" aria-expanded=\"false\">\n            <div class=\"card-body\">\n                <app-zone-develop-creature-remains></app-zone-develop-creature-remains>\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading3\" data-toggle=\"collapse\" data-target=\"#collapse3\" aria-expanded=\"true\" aria-controls=\"collapse3\">\n            #3 T9 Carrier Ant* Evolution Research Creature Remains\n        </div>\n        <div id=\"collapse3\" class=\"collapse\" aria-labelledby=\"heading3\" data-parent=\"#accordion\" aria-expanded=\"false\">\n            <div class=\"card-body\">\n                <app-t9-creature-remains></app-t9-creature-remains>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1836,6 +1869,62 @@ var ZoneDevelopCreatureRemainsComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], ZoneDevelopCreatureRemainsComponent);
     return ZoneDevelopCreatureRemainsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/upgrades/upgrades.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/upgrades/upgrades.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<iframe width=\"100%\" height=\"500px\" src=\"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZvViL89hKuChE760gKsL3WAVKam-faU38b7vMjQuuAVbsx_WkNx3kxxww3mDpn9QlueUxI9mQoqOZ/pubhtml?widget=true&amp;headers=false\">\n</iframe>"
+
+/***/ }),
+
+/***/ "./src/app/upgrades/upgrades.component.less":
+/*!**************************************************!*\
+  !*** ./src/app/upgrades/upgrades.component.less ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VwZ3JhZGVzL3VwZ3JhZGVzLmNvbXBvbmVudC5sZXNzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/upgrades/upgrades.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/upgrades/upgrades.component.ts ***!
+  \************************************************/
+/*! exports provided: UpgradesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpgradesComponent", function() { return UpgradesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var UpgradesComponent = /** @class */ (function () {
+    function UpgradesComponent() {
+    }
+    UpgradesComponent.prototype.ngOnInit = function () {
+    };
+    UpgradesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-upgrades',
+            template: __webpack_require__(/*! ./upgrades.component.html */ "./src/app/upgrades/upgrades.component.html"),
+            styles: [__webpack_require__(/*! ./upgrades.component.less */ "./src/app/upgrades/upgrades.component.less")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], UpgradesComponent);
+    return UpgradesComponent;
 }());
 
 
@@ -2272,7 +2361,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: true
 };
 /*
  * For easier debugging in development mode, you can import the following file

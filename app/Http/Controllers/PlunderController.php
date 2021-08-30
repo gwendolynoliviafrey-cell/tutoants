@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plunder;
 use App\Models\PlunderProcess;
 use App\Models\PlunderResult;
+use App\Models\PlunderSave;
 use Illuminate\Http\Request;
 
 class PlunderController extends Controller
@@ -73,6 +74,8 @@ class PlunderController extends Controller
 
         $plunderResult = $this->processPlunder($plunder);
         $plunderResult->consolidar($plunder);
+
+        PlunderSave::convertAndSave($plunder, $plunderResult);
 
         return  json_encode([$plunderResult]);
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ColonyAction;
 use Illuminate\Http\Request;
 
 class ColonyActionsController extends Controller
@@ -25,5 +26,10 @@ class ColonyActionsController extends Controller
     public function index()
     {
         return view("layouts.app-angular");
+    }
+
+    public function getColonyActionsList()
+    {
+        return ColonyAction::all();
     }
 }
