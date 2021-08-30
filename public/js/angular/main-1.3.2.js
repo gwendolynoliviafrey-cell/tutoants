@@ -505,19 +505,25 @@ var ColonyActionsComponent = /** @class */ (function (_super) {
         this.editavel = true;
         this.diaSelecionadoId = this.getDiaIdAtual();
         this.selecionaDia();
+        console.log(this.colonyActionsService.diasIndex);
     };
     ColonyActionsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.timezoneOffset = this.LOCAL_TIMEZONE_OFFSET;
         this.selecionaTimezone();
-        this.colonyActionsService.getColonyActionsList()
-            .then(function (r) {
-            _this.posInicializa();
-        })
-            .catch(function (r) {
-            alert("Failed to get the Colony Actions list");
-            var erro = _this.erroHttp(r);
-        });
+        if (this.colonyActionsService.flagDadosObtidos) {
+            this.posInicializa();
+        }
+        else {
+            this.colonyActionsService.getColonyActionsList()
+                .then(function (r) {
+                _this.posInicializa();
+            })
+                .catch(function (r) {
+                alert("Failed to get the Colony Actions list");
+                var erro = _this.erroHttp(r);
+            });
+        }
     };
     ColonyActionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -560,8 +566,8 @@ var ColonyActionsService = /** @class */ (function () {
     function ColonyActionsService(http) {
         this.http = http;
         this.dias = [
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](1, "Monday", "Gather Resource"),
-            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](2, "Tuesday", "Upgrade Building"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](1, "Tuesday", "Upgrade Building"),
+            new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](2, "Monday", "Gather Resource"),
             new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](3, "Wednesday", "Research Evolution"),
             new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](4, "Thursday", "Strengthen Special Ant"),
             new _dia_semana__WEBPACK_IMPORTED_MODULE_5__["DiaSemana"](5, "Friday", "Hatch Soldier"),
@@ -627,6 +633,7 @@ var ColonyActionsService = /** @class */ (function () {
         new ColonyAction(56,"All Insect Development + Use Any Speedup",7,7),*/
         ];
         this.diasIndex = null;
+        this.flagDadosObtidos = false;
     }
     ColonyActionsService.prototype.getColonyActionsList = function () {
         var _this = this;
@@ -635,6 +642,7 @@ var ColonyActionsService = /** @class */ (function () {
             .then(function (response) {
             _this.colonyActions = _colony_action__WEBPACK_IMPORTED_MODULE_4__["ColonyAction"].convertList(response.json());
             _this.obtemDias();
+            _this.flagDadosObtidos = true;
             return _this.colonyActions;
         });
     };
@@ -1752,7 +1760,7 @@ var T9CreatureRemainsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"accordion\">\n    <div class=\"card\">\n        <div id=\"collapse0\" class=\"collapse\" [ngClass]=\"{show : showLegend }\">\n            <div class=\"card-body\">\n                Select and see one of the options below:\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" title=\"See the list off all necessary Exp for leveling special ants\" style=\"cursor: pointer;\" id=\"heading1\" data-toggle=\"collapse\" data-target=\"#collapse1\" aria-expanded=\"true\" aria-controls=\"collapse1\">\n            #1 Special Ant Exp Table\n        </div>\n        <div id=\"collapse1\" class=\"collapse\" aria-labelledby=\"heading1\" data-parent=\"#accordion\">\n            <div class=\"card-body\">\n                <app-special-ant-exp></app-special-ant-exp>\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading2\" data-toggle=\"collapse\" data-target=\"#collapse2\" aria-expanded=\"true\" aria-controls=\"collapse2\">\n            #2 Zone Develop Creature Remains\n        </div>\n        <div id=\"collapse2\" class=\"collapse\" aria-labelledby=\"heading2\" data-parent=\"#accordion\" aria-expanded=\"false\">\n            <div class=\"card-body\">\n                <app-zone-develop-creature-remains></app-zone-develop-creature-remains>\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading3\" data-toggle=\"collapse\" data-target=\"#collapse3\" aria-expanded=\"true\" aria-controls=\"collapse3\">\n            #3 T9 Carrier Ant* Evolution Research Creature Remains\n        </div>\n        <div id=\"collapse3\" class=\"collapse\" aria-labelledby=\"heading3\" data-parent=\"#accordion\" aria-expanded=\"false\">\n            <div class=\"card-body\">\n                <app-t9-creature-remains></app-t9-creature-remains>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div id=\"accordion\">\n    <div class=\"card\">\n        <div id=\"collapse0\" class=\"collapse\" [ngClass]=\"{show : showLegend }\">\n            <div class=\"card-body\">\n                Select and see one of the options below:\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" title=\"See the list off all necessary Exp for leveling special ants\" style=\"cursor: pointer;\" id=\"heading1\" data-toggle=\"collapse\" data-target=\"#collapse1\" aria-expanded=\"true\" aria-controls=\"collapse1\">\n            #1 Special Ant Exp Table\n        </div>\n        <div id=\"collapse1\" class=\"collapse\" aria-labelledby=\"heading1\" data-parent=\"#accordion\">\n            <div class=\"card-body\">\n                <app-special-ant-exp></app-special-ant-exp>\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading2\" data-toggle=\"collapse\" data-target=\"#collapse2\" aria-expanded=\"true\" aria-controls=\"collapse2\">\n            #2 Zone Develop Creature Remains\n        </div>\n        <div id=\"collapse2\" class=\"collapse\" aria-labelledby=\"heading2\" data-parent=\"#accordion\" aria-expanded=\"false\">\n            <div class=\"card-body\">\n                <app-zone-develop-creature-remains></app-zone-develop-creature-remains>\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading3\" data-toggle=\"collapse\" data-target=\"#collapse3\" aria-expanded=\"true\" aria-controls=\"collapse3\">\n            #3 T9 Carrier Ant* Evolution Research Creature Remains\n        </div>\n        <div id=\"collapse3\" class=\"collapse\" aria-labelledby=\"heading3\" data-parent=\"#accordion\" aria-expanded=\"false\">\n            <div class=\"card-body\">\n                <app-t9-creature-remains></app-t9-creature-remains>\n            </div>\n        </div>\n    </div>\n    <div class=\"card\">\n        <div class=\"card-header\" style=\"cursor: pointer;\" id=\"heading4\" data-toggle=\"collapse\" data-target=\"#collapse4\" aria-expanded=\"true\" aria-controls=\"collapse4\">\n            #4 Upgrades\n        </div>\n        <div id=\"collapse4\" class=\"collapse\" aria-labelledby=\"heading4\" data-parent=\"#accordion\" aria-expanded=\"false\">\n            <div class=\"card-body\">\n                <app-upgrades></app-upgrades>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
