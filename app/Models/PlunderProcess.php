@@ -21,23 +21,24 @@ class PlunderProcess
     }
 
 
-    public function process($scoutProduto, $pesoProduto, $cargaExtra = 0) {
+    public function process($scoutProduto, $pesoProduto, $consolidadoProduto, $cargaExtra = 0) {
         $newScoutProduto = 0;
         $cargaProduto = $scoutProduto > 0 ? $this->cargaDisponivel / $pesoProduto : 0;
-        if ($scoutProduto <= $cargaProduto) {
-            $cargaExtra += ($cargaProduto - $scoutProduto) * $pesoProduto;
-            $cargaProduto = $scoutProduto;
+        if (floor($consolidadoProduto) <= floor($cargaProduto)) {
+            $cargaExtra += ($cargaProduto - $consolidadoProduto) * $pesoProduto;
+            $cargaProduto = $consolidadoProduto;
             $newScoutProduto = 0;
         }
         else {
             $cargaProduto = $cargaProduto * $this->plunderExtract;//($p->getPlunderExtractTotal()/100);
-            if ($scoutProduto <= $cargaProduto) {
-                $cargaProduto = $scoutProduto;
+            if (floor($consolidadoProduto) <= floor($cargaProduto)) {
+                $cargaProduto = $consolidadoProduto;
                 $newScoutProduto = 0;
             }
             else 
                 $newScoutProduto = $scoutProduto - $cargaProduto;
         }
+        echo $cargaProduto . " - " . $consolidadoProduto . " - " . $newScoutProduto. "\n";
         return new PlunderProcess($this->cargaDisponivel, $this->plunderExtract, $cargaProduto, $cargaExtra, $newScoutProduto);
     }
 }

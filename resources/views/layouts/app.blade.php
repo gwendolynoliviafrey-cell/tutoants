@@ -27,7 +27,7 @@
 
     @yield('innerhead')
 
-    <link href="{{ asset('css/style-1.3.1.css')  }}" rel="stylesheet"/>
+    <link href="{{ asset('css/style-1.4.0.css')  }}" rel="stylesheet"/>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="/js/gtag.js"></script>
@@ -39,6 +39,11 @@
         gtag('config', 'G-3YH9DYNQ4T');
     </script>
 
+    <script>
+        function posObjs() {
+            console.log ('aq');
+        }
+    </script>
     @inject('resources', 'App\Services\ResourcesService')
 </head>
 <body style="background-image: url(/img/fundo-home.png); background-size: cover; background-position: center;">

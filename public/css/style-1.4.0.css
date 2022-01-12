@@ -140,6 +140,36 @@ table.table>caption>table>tbody>tr>td {
     vertical-align: middle;
 }
 
+table.table-insects-start {
+    border-spacing: 0px;
+}
+
+.table-insects-start th {
+    /*border: solid 1px black;*/
+    text-align: center;
+    white-space: nowrap;
+}
+
+.table-insects-start td:first-child {
+    /*border: solid 1px black;*/
+    white-space: nowrap;
+    padding: 0px 5px;
+}
+
+.table-insects-start input {
+    width: 60px;
+}
+
+table.table-insects {
+    border-spacing: 0px;
+}
+
+.table-insects th,
+.table-insects td {
+    border: solid 1px black;
+    padding: 3px 8px;
+}
+
 .footer {
     background-color: #27150360;
 }

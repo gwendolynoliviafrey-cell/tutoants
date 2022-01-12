@@ -3,6 +3,7 @@
 use App\Http\Controllers\ColonyActionsController;
 use App\Http\Controllers\ContributeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InsectUpgradeController;
 use App\Http\Controllers\PlunderController;
 use App\Http\Controllers\SpecialAntExpController;
 use App\Http\Controllers\TablesController;
@@ -44,6 +45,8 @@ Route::get(     '/colony-actions/list',          [ColonyActionsController::class
 
 Route::get(     '/tables',                       [TablesController::class,          'index'                         ]);
 //Route::get(     '/tables/special-ant-exp',       [TablesController::class,          'index'                         ]);
+
+Route::get(     '/insect-upgrade',    			 [InsectUpgradeController::class,   'index'                         ]);
 
 Route::get(     '/plunder-calculator',           [PlunderController::class,         'index'                         ]);
 Route::post(    '/plunder-calculator',           [PlunderController::class,         'calcPlunder'                   ]);

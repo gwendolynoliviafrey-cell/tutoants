@@ -18,11 +18,12 @@ class PlunderController extends Controller
     private function processPlunder(Plunder $p, $d = 0) {
         $cargaReal = $p->carga * Plunder::FATOR_CARGA_REAL;
         if (!$p->hasScout) {
-            $cargaMeat = $cargaReal / 4 / Plunder::PESO_MEAT;
-            $cargaPlant = $cargaReal / 4 / Plunder::PESO_PLANT;
-            $cargaSoil = $cargaReal / 4 / Plunder::PESO_SOIL;
-            $cargaSand = $cargaReal / 4 / Plunder::PESO_SAND;
-            //$cargaHoneydew = $cargaReal / Plunder::PESO_HONEYDEW;
+            $cargaCalculada = $cargaReal * $p->getPlunderExtractTotal()/100 * $p->getPenalidadeNivel()/100;
+            $cargaMeat = $cargaCalculada / 4 / Plunder::PESO_MEAT;
+            $cargaPlant = $cargaCalculada / 4 / Plunder::PESO_PLANT;
+            $cargaSoil = $cargaCalculada / 4 / Plunder::PESO_SOIL;
+            $cargaSand = $cargaCalculada / 4 / Plunder::PESO_SAND;
+            //$cargaHoneydew = $cargaCalculada / Plunder::PESO_HONEYDEW;
             $plunderResult = new PlunderResult($cargaMeat, $cargaPlant, $cargaSoil, $cargaSand/*, $cargaHoneydew*/);
             //$plunderResult->consolidar($p);
             return $plunderResult;
@@ -31,16 +32,19 @@ class PlunderController extends Controller
         $activeResources = ($p->scoutMeat > 0 ? 1 : 0) + ($p->scoutPlant > 0 ? 1 : 0) + ($p->scoutSoil > 0 ? 1 : 0) + ($p->scoutSand > 0 ? 1 : 0);
         if ($activeResources == 0)
             return new PlunderResult(0, 0, 0, 0/*, $cargaHoneydew*/);
+        
+        $menorCarga = $p->getMenorCarga() * $activeResources; 
+        $cargaExtra = $cargaReal >= $menorCarga ? $cargaReal - $menorCarga : 0;                 
+        $plunderProcess = new PlunderProcess(($cargaReal - $cargaExtra) / $activeResources,1);
+        echo "Carga Real: ". $cargaReal . "\n";
+        echo "Menor Carga: ". $menorCarga . "\n";
+        echo "Carga Extra: ". $cargaExtra . "\n";
 
-        $cargaExtra = 0;
-        $plunderProcess = new PlunderProcess($cargaReal / $activeResources,1);
-
-        $processMeat = $plunderProcess->process($p->scoutMeat,Plunder::PESO_MEAT);
-        $processPlant = $plunderProcess->process($p->scoutPlant,Plunder::PESO_PLANT, $processMeat->cargaExtra);
-        $processSoil = $plunderProcess->process($p->scoutSoil,Plunder::PESO_SOIL, $processPlant->cargaExtra);
-        $processSand = $plunderProcess->process($p->scoutSand,Plunder::PESO_SAND, $processSoil->cargaExtra);
-        $cargaExtra = $processSand->cargaExtra;
-
+        $processMeat = $plunderProcess->process($p->scoutMeat,Plunder::PESO_MEAT, $p->meatConsolidado);
+        $processPlant = $plunderProcess->process($p->scoutPlant,Plunder::PESO_PLANT, $p->plantConsolidado, $processMeat->cargaExtra);
+        $processSoil = $plunderProcess->process($p->scoutSoil,Plunder::PESO_SOIL, $p->soilConsolidado, $processPlant->cargaExtra);
+        $processSand = $plunderProcess->process($p->scoutSand,Plunder::PESO_SAND, $p->sandConsolidado, $processSoil->cargaExtra);
+        $cargaExtra += $processSand->cargaExtra;
         /*$cargaHoneydew = $p->scoutHoneydew > 0 ? $cargaReal / Plunder::PESO_HONEYDEW : 0;
         $newScoutHoneydew = $p->scoutHoneydew - $cargaHoneydew;
         if ($p->scoutHoneydew < $cargaHoneydew) {
@@ -73,9 +77,9 @@ class PlunderController extends Controller
         $plunder = new Plunder( $request->all() );
 
         $plunderResult = $this->processPlunder($plunder);
-        $plunderResult->consolidar($plunder);
+        //$plunderResult->consolidar($plunder);
 
-        PlunderSave::convertAndSave($plunder, $plunderResult);
+        //PlunderSave::convertAndSave($plunder, $plunderResult);
 
         return  json_encode([$plunderResult]);
     }
